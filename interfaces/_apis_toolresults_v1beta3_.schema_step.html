@@ -1,0 +1,540 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$Step | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_toolresults_v1beta3_.html">&quot;apis/toolresults/v1beta3&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_toolresults_v1beta3_.schema_step.html">Schema$Step</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$Step</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A Step represents a single operation performed as part of Execution. A step
+							can be used to represent the execution of a tool ( for example a test runner
+							execution or an execution of a compiler).  Steps can overlap (for instance
+							two steps might have the same start time if some operations are done in
+							parallel).  Here is an example, let&#39;s consider that we have a continuous
+							build is executing a test runner for each iteration. The workflow would look
+							like: - user creates a Execution with id 1 - user creates an
+							TestExecutionStep with id 100 for Execution 1 - user update TestExecutionStep
+							with id 100 to add a raw xml log + the service parses the xml logs and
+							returns a TestExecutionStep with updated TestResult(s). - user update the
+							status of TestExecutionStep with id 100 to COMPLETE  A Step can be updated
+						until its state is set to COMPLETE at which points it becomes immutable.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$Step</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#completiontime" class="tsd-kind-icon">completion<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#creationtime" class="tsd-kind-icon">creation<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#deviceusageduration" class="tsd-kind-icon">device<wbr>Usage<wbr>Duration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#dimensionvalue" class="tsd-kind-icon">dimension<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#hasimages" class="tsd-kind-icon">has<wbr>Images</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#labels" class="tsd-kind-icon">labels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#outcome" class="tsd-kind-icon">outcome</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#runduration" class="tsd-kind-icon">run<wbr>Duration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#stepid" class="tsd-kind-icon">step<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#testexecutionstep" class="tsd-kind-icon">test<wbr>Execution<wbr>Step</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_step.html#toolexecutionstep" class="tsd-kind-icon">tool<wbr>Execution<wbr>Step</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="completiontime" class="tsd-anchor"></a>
+					<h3>completion<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">completion<wbr>Time<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_timestamp.html" class="tsd-signature-type">Schema$Timestamp</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L930">apis/toolresults/v1beta3.ts:930</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The time when the step status was set to complete.  This value will be set
+								automatically when state transitions to COMPLETE.  - In response: set if
+							the execution state is COMPLETE. - In create/update request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="creationtime" class="tsd-anchor"></a>
+					<h3>creation<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">creation<wbr>Time<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_timestamp.html" class="tsd-signature-type">Schema$Timestamp</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L935">apis/toolresults/v1beta3.ts:935</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The time when the step was created.  - In response: always set - In
+							create/update request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="description" class="tsd-anchor"></a>
+					<h3>description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L941">apis/toolresults/v1beta3.ts:941</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A description of this tool For example: mvn clean package -D skipTests=true</p>
+							<ul>
+								<li>In response: present if set by create/update request - In create/update
+								request: optional</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="deviceusageduration" class="tsd-anchor"></a>
+					<h3>device<wbr>Usage<wbr>Duration</h3>
+					<div class="tsd-signature tsd-kind-icon">device<wbr>Usage<wbr>Duration<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_duration.html" class="tsd-signature-type">Schema$Duration</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L951">apis/toolresults/v1beta3.ts:951</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>How much the device resource is used to perform the test.  This is the
+								device usage used for billing purpose, which is different from the
+								run_duration, for example, infrastructure failure won&#39;t be charged for
+								device usage.  PRECONDITION_FAILED will be returned if one attempts to set
+								a device_usage on a step which already has this field set.  - In response:
+								present if previously set. - In create request: optional - In update
+							request: optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dimensionvalue" class="tsd-anchor"></a>
+					<h3>dimension<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">dimension<wbr>Value<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_stepdimensionvalueentry.html" class="tsd-signature-type">Schema$StepDimensionValueEntry</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L974">apis/toolresults/v1beta3.ts:974</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the execution containing this step has any dimension_definition set,
+								then this field allows the child to specify the values of the dimensions.
+								The keys must exactly match the dimension_definition of the execution.  For
+								example, if the execution has <code>dimension_definition = [&amp;#39;attempt&amp;#39;,
+&amp;#39;device&amp;#39;]</code> then a step must define values for those dimensions, eg.
+								<code>dimension_value = [&amp;#39;attempt&amp;#39;: &amp;#39;1&amp;#39;, &amp;#39;device&amp;#39;:
+&amp;#39;Nexus 6&amp;#39;]</code>  If a step does not participate in one dimension of the
+								matrix, the value for that dimension should be empty string. For example,
+								if one of the tests is executed by a runner which does not support retries,
+								the step could have <code>dimension_value = [&amp;#39;attempt&amp;#39;: &amp;#39;&amp;#39;,
+&amp;#39;device&amp;#39;: &amp;#39;Nexus 6&amp;#39;]</code>  If the step does not participate in
+								any dimensions of the matrix, it may leave dimension_value unset.  A
+								PRECONDITION_FAILED will be returned if any of the keys do not exist in the
+								dimension_definition of the execution.  A PRECONDITION_FAILED will be
+								returned if another step in this execution already has the same name and
+								dimension_value, but differs on other data fields, for example, step field
+								is different.  A PRECONDITION_FAILED will be returned if dimension_value is
+								set, and there is a dimension_definition in the execution which is not
+								specified as one of the keys.  - In response: present if set by create - In
+							create request: optional - In update request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="hasimages" class="tsd-anchor"></a>
+					<h3>has<wbr>Images</h3>
+					<div class="tsd-signature tsd-kind-icon">has<wbr>Images<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L980">apis/toolresults/v1beta3.ts:980</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether any of the outputs of this step are images whose thumbnails can be
+								fetched with ListThumbnails.  - In response: always set - In create/update
+							request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="labels" class="tsd-anchor"></a>
+					<h3>labels</h3>
+					<div class="tsd-signature tsd-kind-icon">labels<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_steplabelsentry.html" class="tsd-signature-type">Schema$StepLabelsEntry</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L991">apis/toolresults/v1beta3.ts:991</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Arbitrary user-supplied key/value pairs that are associated with the step.
+								Users are responsible for managing the key namespace such that keys
+								don&#39;t accidentally collide.  An INVALID_ARGUMENT will be returned if
+								the number of labels exceeds 100 or if the length of any of the keys or
+								values exceeds 100 characters.  - In response: always set - In create
+								request: optional - In update request: optional; any new key/value pair
+								will be added to the map, and any new value for an existing key will update
+							that key&#39;s value</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1002">apis/toolresults/v1beta3.ts:1002</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A short human-readable name to display in the UI. Maximum of 100
+								characters. For example: Clean build  A PRECONDITION_FAILED will be
+								returned upon creating a new step if it shares its name and dimension_value
+								with an existing step. If two steps represent a similar action, but have
+								different dimension values, they should share the same name. For instance,
+								if the same set of tests is run on two different platforms, the two steps
+								should have the same name.  - In response: always set - In create request:
+							always set - In update request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="outcome" class="tsd-anchor"></a>
+					<h3>outcome</h3>
+					<div class="tsd-signature tsd-kind-icon">outcome<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_outcome.html" class="tsd-signature-type">Schema$Outcome</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1008">apis/toolresults/v1beta3.ts:1008</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Classification of the result, for example into SUCCESS or FAILURE  - In
+								response: present if set by create/update request - In create/update
+							request: optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="runduration" class="tsd-anchor"></a>
+					<h3>run<wbr>Duration</h3>
+					<div class="tsd-signature tsd-kind-icon">run<wbr>Duration<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_duration.html" class="tsd-signature-type">Schema$Duration</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1021">apis/toolresults/v1beta3.ts:1021</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>How long it took for this step to run.  If unset, this is set to the
+								difference between creation_time and completion_time when the step is set
+								to the COMPLETE state. In some cases, it is appropriate to set this value
+								separately: For instance, if a step is created, but the operation it
+								represents is queued for a few minutes before it executes, it would be
+								appropriate not to include the time spent queued in its run_duration.
+								PRECONDITION_FAILED will be returned if one attempts to set a run_duration
+								on a step which already has this field set.  - In response: present if
+								previously set; always present on COMPLETE step - In create request:
+							optional - In update request: optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1031">apis/toolresults/v1beta3.ts:1031</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The initial state is IN_PROGRESS. The only legal state transitions are *
+								IN_PROGRESS -&gt; COMPLETE  A PRECONDITION_FAILED will be returned if an
+								invalid transition is requested.  It is valid to create Step with a state
+								set to COMPLETE. The state can only be set to COMPLETE once. A
+								PRECONDITION_FAILED will be returned if the state is set to COMPLETE
+								multiple times.  - In response: always set - In create/update request:
+							optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="stepid" class="tsd-anchor"></a>
+					<h3>step<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">step<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1037">apis/toolresults/v1beta3.ts:1037</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A unique identifier within a Execution for this Step.  Returns
+								INVALID_ARGUMENT if this field is set or overwritten by the caller.  - In
+							response: always set - In create/update request: never set</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="testexecutionstep" class="tsd-anchor"></a>
+					<h3>test<wbr>Execution<wbr>Step</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Execution<wbr>Step<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html" class="tsd-signature-type">Schema$TestExecutionStep</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1041">apis/toolresults/v1beta3.ts:1041</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An execution of a test runner.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="toolexecutionstep" class="tsd-anchor"></a>
+					<h3>tool<wbr>Execution<wbr>Step</h3>
+					<div class="tsd-signature tsd-kind-icon">tool<wbr>Execution<wbr>Step<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_toolexecutionstep.html" class="tsd-signature-type">Schema$ToolExecutionStep</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1045">apis/toolresults/v1beta3.ts:1045</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An execution of a tool (used for steps we don&#39;t explicitly support).</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_toolresults_v1beta3_.html">"apis/toolresults/v1beta3"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_toolresults_v1beta3_.schema_step.html" class="tsd-kind-icon">Schema$<wbr>Step</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#completiontime" class="tsd-kind-icon">completion<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#creationtime" class="tsd-kind-icon">creation<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#description" class="tsd-kind-icon">description</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#deviceusageduration" class="tsd-kind-icon">device<wbr>Usage<wbr>Duration</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#dimensionvalue" class="tsd-kind-icon">dimension<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#hasimages" class="tsd-kind-icon">has<wbr>Images</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#labels" class="tsd-kind-icon">labels</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#outcome" class="tsd-kind-icon">outcome</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#runduration" class="tsd-kind-icon">run<wbr>Duration</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#stepid" class="tsd-kind-icon">step<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#testexecutionstep" class="tsd-kind-icon">test<wbr>Execution<wbr>Step</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_step.html#toolexecutionstep" class="tsd-kind-icon">tool<wbr>Execution<wbr>Step</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$HttpRule | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_serviceuser_v1_.html">&quot;apis/serviceuser/v1&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_serviceuser_v1_.schema_httprule.html">Schema$HttpRule</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$HttpRule</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p><code>HttpRule</code> defines the mapping of an RPC method to one or more HTTP REST API
+							methods. The mapping specifies how different portions of the RPC request
+							message are mapped to URL path, URL query parameters, and HTTP request body.
+							The mapping is typically specified as an <code>google.api.http</code> annotation on the
+							RPC method, see &quot;google/api/annotations.proto&quot; for details.  The
+							mapping consists of a field specifying the path template and method kind.
+							The path template can refer to fields in the request message, as in the
+							example below which describes a REST GET operation on a resource collection
+							of messages:       service Messaging {       rpc
+							GetMessage(GetMessageRequest) returns (Message) {         option
+							(google.api.http).get = &quot;/v1/messages/{message_id}/{sub.subfield}&quot;;
+							}     }     message GetMessageRequest {       message SubMessage {
+							string subfield = 1;       }       string message_id = 1; // mapped to the
+							URL       SubMessage sub = 2;    // <code>sub.subfield</code> is url-mapped     }
+							message Message {       string text = 1; // content of the resource     }
+							The same http annotation can alternatively be expressed inside the <code>GRPC API
+Configuration</code> YAML file.      http:       rules:         - selector:
+							&lt;proto_package_name&gt;.Messaging.GetMessage           get:
+							/v1/messages/{message_id}/{sub.subfield}  This definition enables an
+							automatic, bidrectional mapping of HTTP JSON to RPC. Example:  HTTP | RPC
+							-----|----- <code>GET /v1/messages/123456/foo</code>  | <code>GetMessage(message_id:
+&amp;quot;123456&amp;quot; sub: SubMessage(subfield: &amp;quot;foo&amp;quot;))</code>  In general,
+							not only fields but also field paths can be referenced from a path pattern.
+							Fields mapped to the path pattern cannot be repeated and must have a
+							primitive (non-message) type.  Any fields in the request message which are
+							not bound by the path pattern automatically become (optional) HTTP query
+							parameters. Assume the following definition of the request message:
+							service Messaging {       rpc GetMessage(GetMessageRequest) returns (Message)
+							{         option (google.api.http).get =
+							&quot;/v1/messages/{message_id}&quot;;       }     }     message
+							GetMessageRequest {       message SubMessage {         string subfield = 1;
+							}       string message_id = 1; // mapped to the URL       int64 revision = 2;
+							// becomes a parameter       SubMessage sub = 3;    // <code>sub.subfield</code> becomes
+							a parameter     }   This enables a HTTP JSON to RPC mapping as below:  HTTP |
+							RPC -----|----- <code>GET /v1/messages/123456?revision=2&amp;amp;sub.subfield=foo</code> |
+							<code>GetMessage(message_id: &amp;quot;123456&amp;quot; revision: 2 sub:
+SubMessage(subfield: &amp;quot;foo&amp;quot;))</code>  Note that fields which are mapped to
+							HTTP parameters must have a primitive type or a repeated primitive type.
+							Message types are not allowed. In the case of a repeated type, the parameter
+							can be repeated in the URL, as in <code>...?param=A&amp;amp;param=B</code>.  For HTTP method
+							kinds which allow a request body, the <code>body</code> field specifies the mapping.
+							Consider a REST update method on the message resource collection:
+							service Messaging {       rpc UpdateMessage(UpdateMessageRequest) returns
+							(Message) {         option (google.api.http) = {           put:
+							&quot;/v1/messages/{message_id}&quot;           body: &quot;message&quot;
+							};       }     }     message UpdateMessageRequest {       string message_id =
+							1; // mapped to the URL       Message message = 2;   // mapped to the body
+							}   The following HTTP JSON to RPC mapping is enabled, where the
+							representation of the JSON in the request body is determined by protos JSON
+							encoding:  HTTP | RPC -----|----- <code>PUT /v1/messages/123456 {
+&amp;quot;text&amp;quot;: &amp;quot;Hi!&amp;quot; }</code> | <code>UpdateMessage(message_id:
+&amp;quot;123456&amp;quot; message { text: &amp;quot;Hi!&amp;quot; })</code>  The special name <code>*</code>
+							can be used in the body mapping to define that every field not bound by the
+							path template should be mapped to the request body.  This enables the
+							following alternative definition of the update method:      service Messaging
+							{       rpc UpdateMessage(Message) returns (Message) {         option
+							(google.api.http) = {           put: &quot;/v1/messages/{message_id}&quot;
+							body: &quot;<em>&quot;         };       }     }     message Message {
+								string message_id = 1;       string text = 2;     }   The following HTTP JSON
+								to RPC mapping is enabled:  HTTP | RPC -----|----- <code>PUT /v1/messages/123456 {
+&amp;quot;text&amp;quot;: &amp;quot;Hi!&amp;quot; }</code> | <code>UpdateMessage(message_id:
+&amp;quot;123456&amp;quot; text: &amp;quot;Hi!&amp;quot;)</code>  Note that when using `</em><code>in the
+body mapping, it is not possible to have HTTP parameters, as all fields not
+bound by the path end in the body. This makes this option more rarely used in
+practice of defining REST APIs. The common usage of</code><em><code>is in custom methods
+which don&amp;#39;t use the URL at all for transferring data.  It is possible to
+define multiple HTTP methods for one RPC by using the</code>additional_bindings<code>option. Example:      service Messaging {       rpc
+GetMessage(GetMessageRequest) returns (Message) {         option
+(google.api.http) = {           get: &amp;quot;/v1/messages/{message_id}&amp;quot;
+additional_bindings {             get:
+&amp;quot;/v1/users/{user_id}/messages/{message_id}&amp;quot;           }         };
+}     }     message GetMessageRequest {       string message_id = 1;
+string user_id = 2;     }   This enables the following two alternative HTTP
+JSON to RPC mappings:  HTTP | RPC -----|-----</code>GET /v1/messages/123456<code>|</code>GetMessage(message_id: &quot;123456&quot;)<code></code>GET
+								/v1/users/me/messages/123456<code>|</code>GetMessage(user_id: &quot;me&quot;
+								message_id: &quot;123456&quot;)<code># Rules for HTTP mapping  The rules for
+mapping HTTP path, query parameters, and body fields to the request message
+are as follows:  1. The</code>body<code>field specifies either</code></em><code>or a field path, or
+is    omitted. If omitted, it indicates there is no HTTP request body. 2.
+Leaf fields (recursive expansion of nested messages in the    request) can be
+classified into three types:     (a) Matched in the URL template.     (b)
+Covered by body (if body is</code><em>`, everything except (a) fields;         else
+								everything under the body field)     (c) All other fields. 3. URL query
+								parameters found in the HTTP request are mapped to (c) fields. 4. Any body
+								sent with an HTTP request can contain only (b) fields.  The syntax of the
+								path template is as follows:      Template = &quot;/&quot; Segments [ Verb ]
+								;     Segments = Segment { &quot;/&quot; Segment } ;     Segment  =
+								&quot;</em>&quot; | &quot;<strong>&quot; | LITERAL | Variable ;     Variable =
+								&quot;{&quot; FieldPath [ &quot;=&quot; Segments ] &quot;}&quot; ;
+								FieldPath = IDENT { &quot;.&quot; IDENT } ;     Verb     = &quot;:&quot;
+							LITERAL ;  The syntax <code>*</code> matches a single path segment. The syntax `</strong><code>matches zero or more path segments, which must be the last part of the path
+except the</code>Verb<code>. The syntax</code>LITERAL<code>matches literal text in the path.
+The syntax</code>Variable<code>matches part of the URL path as specified by its
+template. A variable template must not contain other variables. If a variable
+matches a single path segment, its template may be omitted, e.g.</code>{var}<code>is
+equivalent to</code>{var=<em>}<code>.  If a variable contains exactly one path segment,
+such as</code>&quot;{var}&quot;<code>or</code>&quot;{var=</em>}&quot;<code>, when such a variable is
+expanded into a URL path, all characters except</code>[-<em>.~0-9a-zA-Z]<code>are
+percent-encoded. Such variables show up in the Discovery Document as</code>{var}<code>.
+If a variable contains one or more path segments, such as</code>&quot;{var=foo/*}&quot;<code>or</code>&quot;{var=**}&quot;<code>, when such a variable is
+expanded into a URL path, all characters except</code>[-</em>.~/0-9a-zA-Z]<code>are
+percent-encoded. Such variables show up in the Discovery Document as</code>{+var}<code>.  NOTE: While the single segment variable matches the semantics of
+[RFC 6570](https://tools.ietf.org/html/rfc6570) Section 3.2.2 Simple String
+Expansion, the multi segment variable **does not** match RFC 6570 Reserved
+Expansion. The reason is that the Reserved Expansion does not expand special
+characters like</code>?<code>and</code>#<code>, which would lead to invalid URLs.  NOTE: the
+field paths in variables and in the</code>body` must not refer to repeated fields
+						or map fields.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$HttpRule</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#additionalbindings" class="tsd-kind-icon">additional<wbr>Bindings</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#body" class="tsd-kind-icon">body</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#custom" class="tsd-kind-icon">custom</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#delete" class="tsd-kind-icon">delete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#mediadownload" class="tsd-kind-icon">media<wbr>Download</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#mediaupload" class="tsd-kind-icon">media<wbr>Upload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#patch" class="tsd-kind-icon">patch</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#post" class="tsd-kind-icon">post</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#put" class="tsd-kind-icon">put</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_serviceuser_v1_.schema_httprule.html#selector" class="tsd-kind-icon">selector</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="additionalbindings" class="tsd-anchor"></a>
+					<h3>additional<wbr>Bindings</h3>
+					<div class="tsd-signature tsd-kind-icon">additional<wbr>Bindings<span class="tsd-signature-symbol">:</span> <a href="_apis_serviceuser_v1_.schema_httprule.html" class="tsd-signature-type">Schema$HttpRule</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L845">apis/serviceuser/v1.ts:845</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Additional HTTP bindings for the selector. Nested bindings must not contain
+								an <code>additional_bindings</code> field themselves (that is, the nesting may only be
+							one level deep).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="body" class="tsd-anchor"></a>
+					<h3>body</h3>
+					<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L852">apis/serviceuser/v1.ts:852</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of the request field whose value is mapped to the HTTP body, or
+								<code>*</code> for mapping all fields not captured by the path pattern to the HTTP
+								body. NOTE: the referred field must not be a repeated field and must be
+							present at the top-level of request message type.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="custom" class="tsd-anchor"></a>
+					<h3>custom</h3>
+					<div class="tsd-signature tsd-kind-icon">custom<span class="tsd-signature-symbol">:</span> <a href="_apis_serviceuser_v1_.schema_customhttppattern.html" class="tsd-signature-type">Schema$CustomHttpPattern</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L859">apis/serviceuser/v1.ts:859</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The custom pattern is used for specifying an HTTP method that is not
+								included in the <code>pattern</code> field, such as HEAD, or &quot;*&quot; to leave
+								the HTTP method unspecified for this rule. The wild-card rule is useful for
+							services that provide content to Web (HTML) clients.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="delete" class="tsd-anchor"></a>
+					<h3>delete</h3>
+					<div class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L863">apis/serviceuser/v1.ts:863</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for deleting a resource.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<div class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L867">apis/serviceuser/v1.ts:867</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for listing and getting information about resources.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="mediadownload" class="tsd-anchor"></a>
+					<h3>media<wbr>Download</h3>
+					<div class="tsd-signature tsd-kind-icon">media<wbr>Download<span class="tsd-signature-symbol">:</span> <a href="_apis_serviceuser_v1_.schema_mediadownload.html" class="tsd-signature-type">Schema$MediaDownload</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L873">apis/serviceuser/v1.ts:873</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Use this only for Scotty Requests. Do not use this for bytestream methods.
+								For media support, add instead [][google.bytestream.RestByteStream] as an
+							API to your configuration.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="mediaupload" class="tsd-anchor"></a>
+					<h3>media<wbr>Upload</h3>
+					<div class="tsd-signature tsd-kind-icon">media<wbr>Upload<span class="tsd-signature-symbol">:</span> <a href="_apis_serviceuser_v1_.schema_mediaupload.html" class="tsd-signature-type">Schema$MediaUpload</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L879">apis/serviceuser/v1.ts:879</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Use this only for Scotty Requests. Do not use this for media support using
+								Bytestream, add instead [][google.bytestream.RestByteStream] as an API to
+							your configuration for Bytestream methods.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="patch" class="tsd-anchor"></a>
+					<h3>patch</h3>
+					<div class="tsd-signature tsd-kind-icon">patch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L883">apis/serviceuser/v1.ts:883</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for updating a resource.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="post" class="tsd-anchor"></a>
+					<h3>post</h3>
+					<div class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L887">apis/serviceuser/v1.ts:887</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for creating a resource.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="put" class="tsd-anchor"></a>
+					<h3>put</h3>
+					<div class="tsd-signature tsd-kind-icon">put<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L891">apis/serviceuser/v1.ts:891</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for updating a resource.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="selector" class="tsd-anchor"></a>
+					<h3>selector</h3>
+					<div class="tsd-signature tsd-kind-icon">selector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/serviceuser/v1.ts#L896">apis/serviceuser/v1.ts:896</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Selects methods to which this rule applies.  Refer to selector for syntax
+							details.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_serviceuser_v1_.html">"apis/serviceuser/v1"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_serviceuser_v1_.schema_httprule.html" class="tsd-kind-icon">Schema$<wbr>Http<wbr>Rule</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#additionalbindings" class="tsd-kind-icon">additional<wbr>Bindings</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#body" class="tsd-kind-icon">body</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#custom" class="tsd-kind-icon">custom</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#delete" class="tsd-kind-icon">delete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#mediadownload" class="tsd-kind-icon">media<wbr>Download</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#mediaupload" class="tsd-kind-icon">media<wbr>Upload</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#patch" class="tsd-kind-icon">patch</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#post" class="tsd-kind-icon">post</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#put" class="tsd-kind-icon">put</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_serviceuser_v1_.schema_httprule.html#selector" class="tsd-kind-icon">selector</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

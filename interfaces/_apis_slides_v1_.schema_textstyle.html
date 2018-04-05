@@ -1,0 +1,480 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$TextStyle | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_slides_v1_.html">&quot;apis/slides/v1&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_slides_v1_.schema_textstyle.html">Schema$TextStyle</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$TextStyle</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Represents the styling that can be applied to a TextRun.  If this text is
+							contained in a shape with a parent placeholder, then these text styles may be
+							inherited from the parent. Which text styles are inherited depend on the
+							nesting level of lists:  <em> A text run in a paragraph that is not in a list
+								will inherit its text style   from the the newline character in the paragraph
+							at the 0 nesting level of   the list inside the parent placeholder. </em> A text
+							run in a paragraph that is in a list will inherit its text style   from the
+							newline character in the paragraph at its corresponding nesting   level of
+							the list inside the parent placeholder.  Inherited text styles are
+							represented as unset fields in this message. If text is contained in a shape
+							without a parent placeholder, unsetting these fields will revert the style to
+						a value matching the defaults in the Slides editor.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$TextStyle</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#baselineoffset" class="tsd-kind-icon">baseline<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#bold" class="tsd-kind-icon">bold</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#fontfamily" class="tsd-kind-icon">font<wbr>Family</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#fontsize" class="tsd-kind-icon">font<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#foregroundcolor" class="tsd-kind-icon">foreground<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#italic" class="tsd-kind-icon">italic</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#link" class="tsd-kind-icon">link</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#smallcaps" class="tsd-kind-icon">small<wbr>Caps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#strikethrough" class="tsd-kind-icon">strikethrough</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#underline" class="tsd-kind-icon">underline</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_slides_v1_.schema_textstyle.html#weightedfontfamily" class="tsd-kind-icon">weighted<wbr>Font<wbr>Family</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="backgroundcolor" class="tsd-anchor"></a>
+					<h3>background<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">background<wbr>Color<span class="tsd-signature-symbol">:</span> <a href="_apis_slides_v1_.schema_optionalcolor.html" class="tsd-signature-type">Schema$OptionalColor</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2488">apis/slides/v1.ts:2488</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The background color of the text. If set, the color is either opaque or
+							transparent, depending on if the <code>opaque_color</code> field in it is set.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="baselineoffset" class="tsd-anchor"></a>
+					<h3>baseline<wbr>Offset</h3>
+					<div class="tsd-signature tsd-kind-icon">baseline<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2495">apis/slides/v1.ts:2495</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The text&#39;s vertical offset from its normal position.  Text with
+								<code>SUPERSCRIPT</code> or <code>SUBSCRIPT</code> baseline offsets is automatically rendered in
+								a smaller font size, computed based on the <code>font_size</code> field. The
+							<code>font_size</code> itself is not affected by changes in this field.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="bold" class="tsd-anchor"></a>
+					<h3>bold</h3>
+					<div class="tsd-signature tsd-kind-icon">bold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2499">apis/slides/v1.ts:2499</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the text is rendered as bold.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="fontfamily" class="tsd-anchor"></a>
+					<h3>font<wbr>Family</h3>
+					<div class="tsd-signature tsd-kind-icon">font<wbr>Family<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2507">apis/slides/v1.ts:2507</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The font family of the text.  The font family can be any font from the Font
+								menu in Slides or from [Google Fonts] (<a href="https://fonts.google.com/)">https://fonts.google.com/)</a>. If the
+								font name is unrecognized, the text is rendered in <code>Arial</code>.  Some fonts can
+								affect the weight of the text. If an update request specifies values for
+							both <code>font_family</code> and <code>bold</code>, the explicitly-set <code>bold</code> value is used.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="fontsize" class="tsd-anchor"></a>
+					<h3>font<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">font<wbr>Size<span class="tsd-signature-symbol">:</span> <a href="_apis_slides_v1_.schema_dimension.html" class="tsd-signature-type">Schema$Dimension</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2512">apis/slides/v1.ts:2512</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The size of the text&#39;s font. When read, the <code>font_size</code> will specified
+							in points.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="foregroundcolor" class="tsd-anchor"></a>
+					<h3>foreground<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">foreground<wbr>Color<span class="tsd-signature-symbol">:</span> <a href="_apis_slides_v1_.schema_optionalcolor.html" class="tsd-signature-type">Schema$OptionalColor</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2517">apis/slides/v1.ts:2517</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The color of the text itself. If set, the color is either opaque or
+							transparent, depending on if the <code>opaque_color</code> field in it is set.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="italic" class="tsd-anchor"></a>
+					<h3>italic</h3>
+					<div class="tsd-signature tsd-kind-icon">italic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2521">apis/slides/v1.ts:2521</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the text is italicized.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="link" class="tsd-anchor"></a>
+					<h3>link</h3>
+					<div class="tsd-signature tsd-kind-icon">link<span class="tsd-signature-symbol">:</span> <a href="_apis_slides_v1_.schema_link.html" class="tsd-signature-type">Schema$Link</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2539">apis/slides/v1.ts:2539</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hyperlink destination of the text. If unset, there is no link. Links
+								are not inherited from parent text.  Changing the link in an update request
+								causes some other changes to the text style of the range:  <em> When setting a
+									link, the text foreground color will be set to   ThemeColorType.HYPERLINK
+									and the text will   be underlined. If these fields are modified in the same
+								request, those values will be used instead of the link defaults. </em> Setting
+								a link on a text range that overlaps with an existing link will   also
+								update the existing link to point to the new URL. <em> Links are not settable
+									on newline characters. As a result, setting a link   on a text range that
+									crosses a paragraph boundary, such as <code>&amp;quot;ABCx/123&amp;quot;</code>,   will
+									separate the newline character(s) into their own text runs. The   link will
+								be applied separately to the runs before and after the newline. </em> Removing
+								a link will update the text style of the range to match the   style of the
+								preceding text (or the default text styles if the preceding   text is
+							another link) unless different styles are being set in the same   request.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="smallcaps" class="tsd-anchor"></a>
+					<h3>small<wbr>Caps</h3>
+					<div class="tsd-signature tsd-kind-icon">small<wbr>Caps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2543">apis/slides/v1.ts:2543</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the text is in small capital letters.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="strikethrough" class="tsd-anchor"></a>
+					<h3>strikethrough</h3>
+					<div class="tsd-signature tsd-kind-icon">strikethrough<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2547">apis/slides/v1.ts:2547</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the text is struck through.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="underline" class="tsd-anchor"></a>
+					<h3>underline</h3>
+					<div class="tsd-signature tsd-kind-icon">underline<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2551">apis/slides/v1.ts:2551</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the text is underlined.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="weightedfontfamily" class="tsd-anchor"></a>
+					<h3>weighted<wbr>Font<wbr>Family</h3>
+					<div class="tsd-signature tsd-kind-icon">weighted<wbr>Font<wbr>Family<span class="tsd-signature-symbol">:</span> <a href="_apis_slides_v1_.schema_weightedfontfamily.html" class="tsd-signature-type">Schema$WeightedFontFamily</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/slides/v1.ts#L2576">apis/slides/v1.ts:2576</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The font family and rendered weight of the text.  This field is an
+								extension of <code>font_family</code> meant to support explicit font weights without
+								breaking backwards compatibility. As such, when reading the style of a
+								range of text, the value of <code>weighted_font_family#font_family</code> will always
+								be equal to that of <code>font_family</code>. However, when writing, if both fields
+								are included in the field mask (either explicitly or through the wildcard
+								<code>&amp;quot;*&amp;quot;</code>), their values are reconciled as follows:  <em> If
+									<code>font_family</code> is set and <code>weighted_font_family</code> is not, the value of
+								<code>font_family</code> is applied with weight <code>400</code> (&quot;normal&quot;). </em> If both
+								fields are set, the value of <code>font_family</code> must match that of
+								<code>weighted_font_family#font_family</code>. If so, the font family and weight of
+								<code>weighted_font_family</code> is applied. Otherwise, a 400 bad request error is
+								returned. <em> If <code>weighted_font_family</code> is set and <code>font_family</code> is not, the
+								font   family and weight of <code>weighted_font_family</code> is applied. </em> If neither
+								field is set, the font family and weight of the text inherit   from the
+								parent. Note that these properties cannot inherit separately   from each
+								other.  If an update request specifies values for both
+								<code>weighted_font_family</code> and <code>bold</code>, the <code>weighted_font_family</code> is applied
+								first, then <code>bold</code>.  If <code>weighted_font_family#weight</code> is not set, it
+								defaults to <code>400</code>.  If <code>weighted_font_family</code> is set, then
+								<code>weighted_font_family#font_family</code> must also be set with a non-empty value.
+							Otherwise, a 400 bad request error is returned.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_slides_v1_.html">"apis/slides/v1"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_slides_v1_.schema_textstyle.html" class="tsd-kind-icon">Schema$<wbr>Text<wbr>Style</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#baselineoffset" class="tsd-kind-icon">baseline<wbr>Offset</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#bold" class="tsd-kind-icon">bold</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#fontfamily" class="tsd-kind-icon">font<wbr>Family</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#fontsize" class="tsd-kind-icon">font<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#foregroundcolor" class="tsd-kind-icon">foreground<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#italic" class="tsd-kind-icon">italic</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#link" class="tsd-kind-icon">link</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#smallcaps" class="tsd-kind-icon">small<wbr>Caps</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#strikethrough" class="tsd-kind-icon">strikethrough</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#underline" class="tsd-kind-icon">underline</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_slides_v1_.schema_textstyle.html#weightedfontfamily" class="tsd-kind-icon">weighted<wbr>Font<wbr>Family</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

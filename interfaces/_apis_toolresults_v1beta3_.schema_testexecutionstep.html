@@ -1,0 +1,288 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$TestExecutionStep | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_toolresults_v1beta3_.html">&quot;apis/toolresults/v1beta3&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html">Schema$TestExecutionStep</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$TestExecutionStep</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A step that represents running tests.  It accepts ant-junit xml files which
+							will be parsed into structured test results by the service. Xml file paths
+							are updated in order to append more files, however they can&#39;t be deleted.
+						Users can also add test results manually by using the test_result field.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$TestExecutionStep</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testissues" class="tsd-kind-icon">test<wbr>Issues</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testsuiteoverviews" class="tsd-kind-icon">test<wbr>Suite<wbr>Overviews</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testtiming" class="tsd-kind-icon">test<wbr>Timing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#toolexecution" class="tsd-kind-icon">tool<wbr>Execution</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="testissues" class="tsd-anchor"></a>
+					<h3>test<wbr>Issues</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Issues<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_testissue.html" class="tsd-signature-type">Schema$TestIssue</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1093">apis/toolresults/v1beta3.ts:1093</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Issues observed during the test execution.  For example, if the mobile app
+								under test crashed during the test, the error message and the stack trace
+								content can be recorded here to assist debugging.  - In response: present
+							if set by create or update - In create/update request: optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="testsuiteoverviews" class="tsd-anchor"></a>
+					<h3>test<wbr>Suite<wbr>Overviews</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Suite<wbr>Overviews<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_testsuiteoverview.html" class="tsd-signature-type">Schema$TestSuiteOverview</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1102">apis/toolresults/v1beta3.ts:1102</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List of test suite overview contents. This could be parsed from xUnit XML
+								log by server, or uploaded directly by user. This references should only be
+								called when test suites are fully parsed or uploaded.  The maximum allowed
+							number of test suite overviews per step is 1000.  - In response: always set</p>
+							<ul>
+								<li>In create request: optional - In update request: never (use
+								publishXunitXmlFiles custom method instead)</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="testtiming" class="tsd-anchor"></a>
+					<h3>test<wbr>Timing</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Timing<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_testtiming.html" class="tsd-signature-type">Schema$TestTiming</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1107">apis/toolresults/v1beta3.ts:1107</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The timing break down of the test execution.  - In response: present if set
+							by create or update - In create/update request: optional</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="toolexecution" class="tsd-anchor"></a>
+					<h3>tool<wbr>Execution</h3>
+					<div class="tsd-signature tsd-kind-icon">tool<wbr>Execution<span class="tsd-signature-symbol">:</span> <a href="_apis_toolresults_v1beta3_.schema_toolexecution.html" class="tsd-signature-type">Schema$ToolExecution</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/toolresults/v1beta3.ts#L1113">apis/toolresults/v1beta3.ts:1113</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents the execution of the test runner.  The exit code of this tool
+								will be used to determine if the test passed.  - In response: always set -
+							In create/update request: optional</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_toolresults_v1beta3_.html">"apis/toolresults/v1beta3"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html" class="tsd-kind-icon">Schema$<wbr>Test<wbr>Execution<wbr>Step</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testissues" class="tsd-kind-icon">test<wbr>Issues</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testsuiteoverviews" class="tsd-kind-icon">test<wbr>Suite<wbr>Overviews</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#testtiming" class="tsd-kind-icon">test<wbr>Timing</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_toolresults_v1beta3_.schema_testexecutionstep.html#toolexecution" class="tsd-kind-icon">tool<wbr>Execution</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

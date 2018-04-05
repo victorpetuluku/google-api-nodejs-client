@@ -1,0 +1,346 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_dlp_v2_.html">&quot;apis/dlp/v2&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html">Schema$GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Replaces an identifier with a surrogate using FPE with the FFX mode of
+							operation; however when used in the <code>ReidentifyContent</code> API method, it serves
+							the opposite function by reversing the surrogate back into the original
+							identifier. The identifier must be encoded as ASCII. For a given crypto key
+							and context, the same identifier will be replaced with the same surrogate.
+							Identifiers must be at least two characters long. In the case that the
+							identifier is the empty string, it will be skipped. See
+						<a href="/dlp/docs/pseudonymization">Pseudonymization</a> for example usage.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#commonalphabet" class="tsd-kind-icon">common<wbr>Alphabet</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#cryptokey" class="tsd-kind-icon">crypto<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#customalphabet" class="tsd-kind-icon">custom<wbr>Alphabet</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#radix" class="tsd-kind-icon">radix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#surrogateinfotype" class="tsd-kind-icon">surrogate<wbr>Info<wbr>Type</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="commonalphabet" class="tsd-anchor"></a>
+					<h3>common<wbr>Alphabet</h3>
+					<div class="tsd-signature tsd-kind-icon">common<wbr>Alphabet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1350">apis/dlp/v2.ts:1350</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="_apis_dlp_v2_.schema_googleprivacydlpv2fieldid.html" class="tsd-signature-type">Schema$GooglePrivacyDlpV2FieldId</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1365">apis/dlp/v2.ts:1365</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &#39;tweak&#39;, a context may be used for higher security since the
+								same identifier in two different contexts won&#39;t be given the same
+								surrogate. If the context is not set, a default tweak will be used.  If the
+								context is set but:  1. there is no record present when transforming a
+								given value or 1. the field is not present when transforming a given value,
+								a default tweak will be used.  Note that case (1) is expected when an
+								<code>InfoTypeTransformation</code> is applied to both structured and non-structured
+								<code>ContentItem</code>s. Currently, the referenced field may be of value type
+								integer or string.  The tweak is constructed as a sequence of bytes in big
+								endian byte order such that:  - a 64 bit integer is encoded followed by a
+								single byte of value 1 - a string is encoded in UTF-8 format followed by a
+							single byte of value  å 2</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cryptokey" class="tsd-anchor"></a>
+					<h3>crypto<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">crypto<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptokey.html" class="tsd-signature-type">Schema$GooglePrivacyDlpV2CryptoKey</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1369">apis/dlp/v2.ts:1369</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The key used by the encryption algorithm. [required]</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="customalphabet" class="tsd-anchor"></a>
+					<h3>custom<wbr>Alphabet</h3>
+					<div class="tsd-signature tsd-kind-icon">custom<wbr>Alphabet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1377">apis/dlp/v2.ts:1377</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This is supported by mapping these to the alphanumeric characters that the
+								FFX mode natively supports. This happens before/after
+								encryption/decryption. Each character listed must appear only once. Number
+								of characters must be in the range [2, 62]. This must be encoded as ASCII.
+							The order of characters does not matter.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="radix" class="tsd-anchor"></a>
+					<h3>radix</h3>
+					<div class="tsd-signature tsd-kind-icon">radix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1381">apis/dlp/v2.ts:1381</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The native way to select the alphabet. Must be in the range [2, 62].</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="surrogateinfotype" class="tsd-anchor"></a>
+					<h3>surrogate<wbr>Info<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">surrogate<wbr>Info<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="_apis_dlp_v2_.schema_googleprivacydlpv2infotype.html" class="tsd-signature-type">Schema$GooglePrivacyDlpV2InfoType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/dlp/v2.ts#L1404">apis/dlp/v2.ts:1404</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The custom infoType to annotate the surrogate with. This annotation will be
+								applied to the surrogate by prefixing it with the name of the custom
+								infoType followed by the number of characters comprising the surrogate. The
+								following scheme defines the format:
+								info_type_name(surrogate_character_count):surrogate  For example, if the
+								name of custom infoType is &#39;MY_TOKEN_INFO_TYPE&#39; and the surrogate
+								is &#39;abc&#39;, the full replacement value will be:
+								&#39;MY_TOKEN_INFO_TYPE(3):abc&#39;  This annotation identifies the
+								surrogate when inspecting content using the custom infoType
+								<a href="/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype"><code>SurrogateType</code></a>.
+								This facilitates reversal of the surrogate when it occurs in free text.  In
+								order for inspection to work properly, the name of this infoType must not
+								occur naturally anywhere in your data; otherwise, inspection may find a
+								surrogate that does not correspond to an actual identifier. Therefore,
+								choose your custom infoType name carefully after considering what your data
+								looks like. One way to select a name that has a high chance of yielding
+								reliable detection is to include one or more unicode characters that are
+								highly improbable to exist in your data. For example, assuming your data is
+								entered from a regular ASCII keyboard, the symbol with the hex code point
+							29DD might be used like so: ⧝MY_TOKEN_TYPE</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_dlp_v2_.html">"apis/dlp/v2"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html" class="tsd-kind-icon">Schema$<wbr>Google<wbr>Privacy<wbr>Dlp<wbr>V2Crypto<wbr>Replace<wbr>Ffx<wbr>Fpe<wbr>Config</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#commonalphabet" class="tsd-kind-icon">common<wbr>Alphabet</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#cryptokey" class="tsd-kind-icon">crypto<wbr>Key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#customalphabet" class="tsd-kind-icon">custom<wbr>Alphabet</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#radix" class="tsd-kind-icon">radix</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_dlp_v2_.schema_googleprivacydlpv2cryptoreplaceffxfpeconfig.html#surrogateinfotype" class="tsd-kind-icon">surrogate<wbr>Info<wbr>Type</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

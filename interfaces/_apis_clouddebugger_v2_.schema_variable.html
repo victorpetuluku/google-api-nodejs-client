@@ -1,0 +1,471 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$Variable | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_clouddebugger_v2_.html">&quot;apis/clouddebugger/v2&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_clouddebugger_v2_.schema_variable.html">Schema$Variable</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$Variable</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Represents a variable or an argument possibly of a compound object type. Note
+							how the following variables are represented:  1) A simple variable:      int
+							x = 5      { name: &quot;x&quot;, value: &quot;5&quot;, type: &quot;int&quot;
+							}  // Captured variable  2) A compound object:      struct T {         int
+							m1;         int m2;     };     T x = { 3, 7 };      {  // Captured variable
+							name: &quot;x&quot;,         type: &quot;T&quot;,         members { name:
+							&quot;m1&quot;, value: &quot;3&quot;, type: &quot;int&quot; },
+							members { name: &quot;m2&quot;, value: &quot;7&quot;, type: &quot;int&quot; }
+							}  3) A pointer where the pointee was captured:      T x = { 3, 7 };     T<em> p
+								= &amp;x;      {   // Captured variable         name: &quot;p&quot;,
+							type: &quot;T</em>&quot;,         value: &quot;0x00500500&quot;,         members
+							{ name: &quot;m1&quot;, value: &quot;3&quot;, type: &quot;int&quot; },
+							members { name: &quot;m2&quot;, value: &quot;7&quot;, type: &quot;int&quot; }
+							}  4) A pointer where the pointee was not captured:      T<em> p = new T;      {
+								// Captured variable         name: &quot;p&quot;,         type:
+							&quot;T</em>&quot;,         value: &quot;0x00400400&quot;         status {
+							is_error: true, description { format: &quot;unavailable&quot; } }     }  The
+							status should describe the reason for the missing value, such as
+							<code>&amp;lt;optimized out&amp;gt;</code>, <code>&amp;lt;inaccessible&amp;gt;</code>, <code>&amp;lt;pointers limit
+reached&amp;gt;</code>.  Note that a null pointer should not have members.  5) An
+							unnamed value:      int<em> p = new int(7);      {   // Captured variable
+								name: &quot;p&quot;,         value: &quot;0x00500500&quot;,         type:
+							&quot;int</em>&quot;,         members { value: &quot;7&quot;, type:
+							&quot;int&quot; } }  6) An unnamed pointer where the pointee was not
+							captured:      int<em> p = new int(7);     int<strong> pp = &amp;p;      {  //
+									Captured variable         name: &quot;pp&quot;,         value:
+								&quot;0x00500500&quot;,         type: &quot;int</strong>&quot;,         members {
+							value: &quot;0x00400400&quot;,             type: &quot;int</em>&quot;
+							status {                 is_error: true,                 description: {
+							format: &quot;unavailable&quot; } }             }         }     }  To
+							optimize computation, memory and network traffic, variables that repeat in
+							the output multiple times can be stored once in a shared variable table and
+							be referenced using the <code>var_table_index</code> field.  The variables stored in the
+							shared table are nameless and are essentially a partition of the complete
+							variable. To reconstruct the complete variable, merge the referencing
+							variable with the referenced variable.  When using the shared variable table,
+							the following variables:      T x = { 3, 7 };     T<em> p = &amp;x;     T&amp; r
+								= x;      { name: &quot;x&quot;, var_table_index: 3, type: &quot;T&quot; }
+								// Captured variables     { name: &quot;p&quot;, value
+							&quot;0x00500500&quot;, type=&quot;T</em>&quot;, var_table_index: 3 }     { name:
+							&quot;r&quot;, type=&quot;T&amp;&quot;, var_table_index: 3 }      {  //
+							Shared variable table entry #3:         members { name: &quot;m1&quot;,
+							value: &quot;3&quot;, type: &quot;int&quot; },         members { name:
+							&quot;m2&quot;, value: &quot;7&quot;, type: &quot;int&quot; }     }  Note
+							that the pointer address is stored with the referencing variable and not with
+							the referenced variable. This allows the referenced variable to be shared
+							between pointers and references.  The type field is optional. The debugger
+						agent may or may not support it.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$Variable</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#members" class="tsd-kind-icon">members</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_clouddebugger_v2_.schema_variable.html#vartableindex" class="tsd-kind-icon">var<wbr>Table<wbr>Index</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="members" class="tsd-anchor"></a>
+					<h3>members</h3>
+					<div class="tsd-signature tsd-kind-icon">members<span class="tsd-signature-symbol">:</span> <a href="_apis_clouddebugger_v2_.schema_variable.html" class="tsd-signature-type">Schema$Variable</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L651">apis/clouddebugger/v2.ts:651</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Members contained or pointed to by the variable.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L655">apis/clouddebugger/v2.ts:655</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Name of the variable, if any.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="_apis_clouddebugger_v2_.schema_statusmessage.html" class="tsd-signature-type">Schema$StatusMessage</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L669">apis/clouddebugger/v2.ts:669</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Status associated with the variable. This field will usually stay unset. A
+								status of a single variable only applies to that variable or expression.
+								The rest of breakpoint data still remains valid. Variables might be
+								reported in error state even when breakpoint is not in final state.  The
+								message may refer to variable name with <code>refers_to</code> set to <code>VARIABLE_NAME</code>.
+								Alternatively <code>refers_to</code> will be set to <code>VARIABLE_VALUE</code>. In either case
+								variable value and members will be unset.  Example of error message applied
+								to name: <code>Invalid expression syntax</code>.  Example of information message
+								applied to value: <code>Not captured</code>.  Examples of error message applied to
+								value:  <em>   <code>Malformed string</code>, </em>   <code>Field f not found in class C</code> *
+							<code>Null pointer dereference</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L676">apis/clouddebugger/v2.ts:676</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Variable type (e.g. <code>MyClass</code>). If the variable is split with
+								<code>var_table_index</code>, <code>type</code> goes next to <code>value</code>. The interpretation of a
+								type is agent specific. It is recommended to include the dynamic type
+							rather than a static type of an object.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L680">apis/clouddebugger/v2.ts:680</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Simple value of the variable.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="vartableindex" class="tsd-anchor"></a>
+					<h3>var<wbr>Table<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">var<wbr>Table<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/clouddebugger/v2.ts#L686">apis/clouddebugger/v2.ts:686</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to a variable in the shared variable table. More than one
+								variable can reference the same variable in the table. The
+							<code>var_table_index</code> field is an index into <code>variable_table</code> in Breakpoint.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_clouddebugger_v2_.html">"apis/clouddebugger/v2"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.clouddebugger.html" class="tsd-kind-icon">Clouddebugger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_controller.html" class="tsd-kind-icon">Resource$<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_controller_debuggees.html" class="tsd-kind-icon">Resource$<wbr>Controller$<wbr>Debuggees</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_controller_debuggees_breakpoints.html" class="tsd-kind-icon">Resource$<wbr>Controller$<wbr>Debuggees$<wbr>Breakpoints</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_debugger.html" class="tsd-kind-icon">Resource$<wbr>Debugger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_debugger_debuggees.html" class="tsd-kind-icon">Resource$<wbr>Debugger$<wbr>Debuggees</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_clouddebugger_v2_.resource_debugger_debuggees_breakpoints.html" class="tsd-kind-icon">Resource$<wbr>Debugger$<wbr>Debuggees$<wbr>Breakpoints</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_aliascontext.html" class="tsd-kind-icon">Schema$<wbr>Alias<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_breakpoint.html" class="tsd-kind-icon">Schema$<wbr>Breakpoint</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_cloudreposourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Cloud<wbr>Repo<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_cloudworkspaceid.html" class="tsd-kind-icon">Schema$<wbr>Cloud<wbr>Workspace<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_cloudworkspacesourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Cloud<wbr>Workspace<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_debuggee.html" class="tsd-kind-icon">Schema$<wbr>Debuggee</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_empty.html" class="tsd-kind-icon">Schema$<wbr>Empty</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_extendedsourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Extended<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_formatmessage.html" class="tsd-kind-icon">Schema$<wbr>Format<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_gerritsourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Gerrit<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_getbreakpointresponse.html" class="tsd-kind-icon">Schema$<wbr>Get<wbr>Breakpoint<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_gitsourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Git<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_listactivebreakpointsresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Active<wbr>Breakpoints<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_listbreakpointsresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Breakpoints<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_listdebuggeesresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Debuggees<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_projectrepoid.html" class="tsd-kind-icon">Schema$<wbr>Project<wbr>Repo<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_registerdebuggeerequest.html" class="tsd-kind-icon">Schema$<wbr>Register<wbr>Debuggee<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_registerdebuggeeresponse.html" class="tsd-kind-icon">Schema$<wbr>Register<wbr>Debuggee<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_repoid.html" class="tsd-kind-icon">Schema$<wbr>Repo<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_setbreakpointresponse.html" class="tsd-kind-icon">Schema$<wbr>Set<wbr>Breakpoint<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_sourcecontext.html" class="tsd-kind-icon">Schema$<wbr>Source<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_sourcelocation.html" class="tsd-kind-icon">Schema$<wbr>Source<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_stackframe.html" class="tsd-kind-icon">Schema$<wbr>Stack<wbr>Frame</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_statusmessage.html" class="tsd-kind-icon">Schema$<wbr>Status<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_updateactivebreakpointrequest.html" class="tsd-kind-icon">Schema$<wbr>Update<wbr>Active<wbr>Breakpoint<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_updateactivebreakpointresponse.html" class="tsd-kind-icon">Schema$<wbr>Update<wbr>Active<wbr>Breakpoint<wbr>Response</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_clouddebugger_v2_.schema_variable.html" class="tsd-kind-icon">Schema$<wbr>Variable</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#members" class="tsd-kind-icon">members</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#status" class="tsd-kind-icon">status</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#value" class="tsd-kind-icon">value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_clouddebugger_v2_.schema_variable.html#vartableindex" class="tsd-kind-icon">var<wbr>Table<wbr>Index</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$AppEngineHttpRequest | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_cloudtasks_v2beta2_.html">&quot;apis/cloudtasks/v2beta2&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html">Schema$AppEngineHttpRequest</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$AppEngineHttpRequest</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>App Engine HTTP request.  The message defines the HTTP request that is sent
+							to an App Engine app when the task is dispatched.  This proto can only be
+							used for tasks in a queue which has app_engine_http_target set.  Using
+							AppEngineHttpRequest requires
+							<a href="/appengine/docs/admin-api/access-control"><code>appengine.applications.get</code></a>
+							Google IAM permission for the project and the following scope:
+							<code>https://www.googleapis.com/auth/cloud-platform</code>  The task will be delivered
+							to the App Engine app which belongs to the same project as the queue. For
+							more information, see <a href="/appengine/docs/standard/python/how-requests-are-routed">How Requests are
+							Routed</a> and how
+							routing is affected by <a href="/appengine/docs/python/config/dispatchref">dispatch
+							files</a>.  The AppEngineRouting used
+							to construct the URL that the task is delivered to can be set at the
+							queue-level or task-level:  * If set,    app_engine_routing_override    is
+							used for all tasks in the queue, no matter what the setting    is for the
+						task-level app_engine_routing.   The <code>url</code> that the task will be sent to is:</p>
+						<ul>
+							<li><code>url =</code> host <code>+</code>   relative_url  The task attempt has succeeded if the
+								app&#39;s request handler returns an HTTP response code in the range [<code>200</code> -
+								<code>299</code>]. <code>503</code> is considered an App Engine system error instead of an
+								application error. Requests returning error <code>503</code> will be retried regardless
+								of retry configuration and not counted against retry counts. Any other
+								response code or a failure to receive a response before the deadline is a
+							failed attempt.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$AppEngineHttpRequest</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#appenginerouting" class="tsd-kind-icon">app<wbr>Engine<wbr>Routing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#headers" class="tsd-kind-icon">headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#httpmethod" class="tsd-kind-icon">http<wbr>Method</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#payload" class="tsd-kind-icon">payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#relativeurl" class="tsd-kind-icon">relative<wbr>Url</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="appenginerouting" class="tsd-anchor"></a>
+					<h3>app<wbr>Engine<wbr>Routing</h3>
+					<div class="tsd-signature tsd-kind-icon">app<wbr>Engine<wbr>Routing<span class="tsd-signature-symbol">:</span> <a href="_apis_cloudtasks_v2beta2_.schema_appenginerouting.html" class="tsd-signature-type">Schema$AppEngineRouting</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/cloudtasks/v2beta2.ts#L109">apis/cloudtasks/v2beta2.ts:109</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Task-level setting for App Engine routing.  If set,
+								app_engine_routing_override is used for all tasks in the queue, no matter
+							what the setting is for the task-level app_engine_routing.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="headers" class="tsd-anchor"></a>
+					<h3>headers</h3>
+					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/cloudtasks/v2beta2.ts#L138">apis/cloudtasks/v2beta2.ts:138</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>HTTP request headers.  This map contains the header field names and values.
+								Headers can be set when the <a href="google.cloud.tasks.v2beta2.CloudTasks.CreateTask">task is
+								created</a>. Repeated
+								headers are not supported but a header value can contain commas.  Cloud
+								Tasks sets some headers to default values:  <em> <code>User-Agent</code>: By default,
+									this header is   <code>&amp;quot;AppEngine-Google;
+(+http://code.google.com/appengine)&amp;quot;</code>.   This header can be modified,
+									but Cloud Tasks will append   <code>&amp;quot;AppEngine-Google;
+(+http://code.google.com/appengine)&amp;quot;</code> to the   modified <code>User-Agent</code>.
+								If the task has a payload, Cloud Tasks sets the following headers:  </em>
+								<code>Content-Type</code>: By default, the <code>Content-Type</code> header is set to
+								<code>&amp;quot;application/octet-stream&amp;quot;</code>. The default can be overridden by
+								explicitly   setting <code>Content-Type</code> to a particular media type when the
+								<a href="google.cloud.tasks.v2beta2.CloudTasks.CreateTask">task is created</a>.   For
+								example, <code>Content-Type</code> can be set to <code>&amp;quot;application/json&amp;quot;</code>. <em>
+									<code>Content-Length</code>: This is computed by Cloud Tasks. This value is   output
+									only.   It cannot be changed.  The headers below cannot be set or
+								overridden:  </em> <code>Host</code> <em> `X-Google-</em><code>*</code>X-AppEngine-*`  In addition, Cloud
+								Tasks sets some headers when the task is dispatched, such as headers
+								containing information about the task; see <a href="/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers">request
+								headers</a>.
+								These headers are set only when the task is dispatched, so they are not
+								visible when the task is returned in a Cloud Tasks response.  Although
+								there is no specific limit for the maximum number of headers or the size,
+								there is a limit on the maximum size of the Task. For more information, see
+							the CreateTask documentation.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="httpmethod" class="tsd-anchor"></a>
+					<h3>http<wbr>Method</h3>
+					<div class="tsd-signature tsd-kind-icon">http<wbr>Method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/cloudtasks/v2beta2.ts#L149">apis/cloudtasks/v2beta2.ts:149</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The HTTP method to use for the request. The default is POST.  The app&#39;s
+								request handler for the task&#39;s target URL must be able to handle HTTP
+								requests with this http_method, otherwise the task attempt will fail with
+								error code 405 (Method Not Allowed). See <a href="/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler">Writing a push task request
+								handler</a>
+								and the documentation for the request handlers in the language your app is
+								written in e.g. <a href="/appengine/docs/python/tools/webapp/requesthandlerclass">Python Request
+							Handler</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="payload" class="tsd-anchor"></a>
+					<h3>payload</h3>
+					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/cloudtasks/v2beta2.ts#L156">apis/cloudtasks/v2beta2.ts:156</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Payload.  The payload will be sent as the HTTP message body. A message
+								body, and thus a payload, is allowed only if the HTTP method is POST or
+								PUT. It is an error to set a data payload on a task with an incompatible
+							HttpMethod.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="relativeurl" class="tsd-anchor"></a>
+					<h3>relative<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">relative<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/cloudtasks/v2beta2.ts#L164">apis/cloudtasks/v2beta2.ts:164</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The relative URL.  The relative URL must begin with &quot;/&quot; and must
+								be a valid HTTP relative URL. It can contain a path and query string
+								arguments. If the relative URL is empty, then the root path &quot;/&quot;
+								will be used. No spaces are allowed, and the maximum length allowed is 2083
+							characters.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_cloudtasks_v2beta2_.html">"apis/cloudtasks/v2beta2"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_cloudtasks_v2beta2_.cloudtasks.html" class="tsd-kind-icon">Cloudtasks</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_cloudtasks_v2beta2_.resource_projects.html" class="tsd-kind-icon">Resource$<wbr>Projects</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_cloudtasks_v2beta2_.resource_projects_locations.html" class="tsd-kind-icon">Resource$<wbr>Projects$<wbr>Locations</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_cloudtasks_v2beta2_.resource_projects_locations_queues.html" class="tsd-kind-icon">Resource$<wbr>Projects$<wbr>Locations$<wbr>Queues</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_apis_cloudtasks_v2beta2_.resource_projects_locations_queues_tasks.html" class="tsd-kind-icon">Resource$<wbr>Projects$<wbr>Locations$<wbr>Queues$<wbr>Tasks</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_acknowledgetaskrequest.html" class="tsd-kind-icon">Schema$<wbr>Acknowledge<wbr>Task<wbr>Request</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html" class="tsd-kind-icon">Schema$<wbr>App<wbr>Engine<wbr>Http<wbr>Request</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#appenginerouting" class="tsd-kind-icon">app<wbr>Engine<wbr>Routing</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#headers" class="tsd-kind-icon">headers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#httpmethod" class="tsd-kind-icon">http<wbr>Method</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#payload" class="tsd-kind-icon">payload</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttprequest.html#relativeurl" class="tsd-kind-icon">relative<wbr>Url</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_appenginehttptarget.html" class="tsd-kind-icon">Schema$<wbr>App<wbr>Engine<wbr>Http<wbr>Target</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_appenginerouting.html" class="tsd-kind-icon">Schema$<wbr>App<wbr>Engine<wbr>Routing</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_attemptstatus.html" class="tsd-kind-icon">Schema$<wbr>Attempt<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_binding.html" class="tsd-kind-icon">Schema$<wbr>Binding</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_cancelleaserequest.html" class="tsd-kind-icon">Schema$<wbr>Cancel<wbr>Lease<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_createtaskrequest.html" class="tsd-kind-icon">Schema$<wbr>Create<wbr>Task<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_empty.html" class="tsd-kind-icon">Schema$<wbr>Empty</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_getiampolicyrequest.html" class="tsd-kind-icon">Schema$<wbr>Get<wbr>Iam<wbr>Policy<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_leasetasksrequest.html" class="tsd-kind-icon">Schema$<wbr>Lease<wbr>Tasks<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_leasetasksresponse.html" class="tsd-kind-icon">Schema$<wbr>Lease<wbr>Tasks<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_listlocationsresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Locations<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_listqueuesresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Queues<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_listtasksresponse.html" class="tsd-kind-icon">Schema$<wbr>List<wbr>Tasks<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_location.html" class="tsd-kind-icon">Schema$<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_pausequeuerequest.html" class="tsd-kind-icon">Schema$<wbr>Pause<wbr>Queue<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_policy.html" class="tsd-kind-icon">Schema$<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_pullmessage.html" class="tsd-kind-icon">Schema$<wbr>Pull<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_pulltarget.html" class="tsd-kind-icon">Schema$<wbr>Pull<wbr>Target</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_purgequeuerequest.html" class="tsd-kind-icon">Schema$<wbr>Purge<wbr>Queue<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_queue.html" class="tsd-kind-icon">Schema$<wbr>Queue</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_ratelimits.html" class="tsd-kind-icon">Schema$<wbr>Rate<wbr>Limits</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_renewleaserequest.html" class="tsd-kind-icon">Schema$<wbr>Renew<wbr>Lease<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_resumequeuerequest.html" class="tsd-kind-icon">Schema$<wbr>Resume<wbr>Queue<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_retryconfig.html" class="tsd-kind-icon">Schema$<wbr>Retry<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_runtaskrequest.html" class="tsd-kind-icon">Schema$<wbr>Run<wbr>Task<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_setiampolicyrequest.html" class="tsd-kind-icon">Schema$<wbr>Set<wbr>Iam<wbr>Policy<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_status.html" class="tsd-kind-icon">Schema$<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_task.html" class="tsd-kind-icon">Schema$<wbr>Task</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_taskstatus.html" class="tsd-kind-icon">Schema$<wbr>Task<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_testiampermissionsrequest.html" class="tsd-kind-icon">Schema$<wbr>Test<wbr>Iam<wbr>Permissions<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_cloudtasks_v2beta2_.schema_testiampermissionsresponse.html" class="tsd-kind-icon">Schema$<wbr>Test<wbr>Iam<wbr>Permissions<wbr>Response</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

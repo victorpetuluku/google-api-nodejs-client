@@ -1,0 +1,317 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Schema$KeyRange | googleapis</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">googleapis</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_apis_spanner_v1_.html">&quot;apis/spanner/v1&quot;</a>
+				</li>
+				<li>
+					<a href="_apis_spanner_v1_.schema_keyrange.html">Schema$KeyRange</a>
+				</li>
+			</ul>
+			<h1>Interface Schema$KeyRange</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>KeyRange represents a range of rows in a table or index.  A range has a start
+							key and an end key. These keys can be open or closed, indicating if the range
+							includes rows with that key.  Keys are represented by lists, where the ith
+							value in the list corresponds to the ith component of the table or index
+							primary key. Individual values are encoded as described here.  For example,
+							consider the following table definition:      CREATE TABLE UserEvents (
+							UserName STRING(MAX),       EventDate STRING(10)     ) PRIMARY KEY(UserName,
+							EventDate);  The following keys name rows in this table:
+							&quot;Bob&quot;, &quot;2014-09-23&quot;  Since the <code>UserEvents</code> table&#39;s
+							<code>PRIMARY KEY</code> clause names two columns, each <code>UserEvents</code> key has two
+							elements; the first is the <code>UserName</code>, and the second is the <code>EventDate</code>.
+							Key ranges with multiple components are interpreted lexicographically by
+							component using the table or index key&#39;s declared sort order. For
+							example, the following range returns all events for user <code>&amp;quot;Bob&amp;quot;</code>
+							that occurred in the year 2015:      &quot;start_closed&quot;:
+							[&quot;Bob&quot;, &quot;2015-01-01&quot;]     &quot;end_closed&quot;:
+							[&quot;Bob&quot;, &quot;2015-12-31&quot;]  Start and end keys can omit
+							trailing key components. This affects the inclusion and exclusion of rows
+							that exactly match the provided key components: if the key is closed, then
+							rows that exactly match the provided components are included; if the key is
+							open, then rows that exactly match are not included.  For example, the
+							following range includes all events for <code>&amp;quot;Bob&amp;quot;</code> that occurred
+							during and after the year 2000:      &quot;start_closed&quot;:
+							[&quot;Bob&quot;, &quot;2000-01-01&quot;]     &quot;end_closed&quot;:
+							[&quot;Bob&quot;]  The next example retrieves all events for
+							<code>&amp;quot;Bob&amp;quot;</code>:      &quot;start_closed&quot;: [&quot;Bob&quot;]
+							&quot;end_closed&quot;: [&quot;Bob&quot;]  To retrieve events before the year
+							2000:      &quot;start_closed&quot;: [&quot;Bob&quot;]
+							&quot;end_open&quot;: [&quot;Bob&quot;, &quot;2000-01-01&quot;]  The
+							following range includes all rows in the table:
+							&quot;start_closed&quot;: []     &quot;end_closed&quot;: []  This range
+							returns all users whose <code>UserName</code> begins with any character from A to C:
+							&quot;start_closed&quot;: [&quot;A&quot;]     &quot;end_open&quot;:
+							[&quot;D&quot;]  This range returns all users whose <code>UserName</code> begins with B:
+							&quot;start_closed&quot;: [&quot;B&quot;]     &quot;end_open&quot;:
+							[&quot;C&quot;]  Key ranges honor column sort order. For example, suppose a
+							table is defined as follows:      CREATE TABLE DescendingSortedTable {
+							Key INT64,       ...     ) PRIMARY KEY(Key DESC);  The following range
+							retrieves all rows with key values between 1 and 100 inclusive:
+							&quot;start_closed&quot;: [&quot;100&quot;]     &quot;end_closed&quot;:
+							[&quot;1&quot;]  Note that 100 is passed as the start, and 1 is passed as the
+						end, because <code>Key</code> is a descending column in the schema.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Schema$KeyRange</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_spanner_v1_.schema_keyrange.html#endclosed" class="tsd-kind-icon">end<wbr>Closed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_spanner_v1_.schema_keyrange.html#endopen" class="tsd-kind-icon">end<wbr>Open</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_spanner_v1_.schema_keyrange.html#startclosed" class="tsd-kind-icon">start<wbr>Closed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apis_spanner_v1_.schema_keyrange.html#startopen" class="tsd-kind-icon">start<wbr>Open</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="endclosed" class="tsd-anchor"></a>
+					<h3>end<wbr>Closed</h3>
+					<div class="tsd-signature tsd-kind-icon">end<wbr>Closed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/spanner/v1.ts#L487">apis/spanner/v1.ts:487</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the end is closed, then the range includes all rows whose first
+							<code>len(end_closed)</code> key columns exactly match <code>end_closed</code>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="endopen" class="tsd-anchor"></a>
+					<h3>end<wbr>Open</h3>
+					<div class="tsd-signature tsd-kind-icon">end<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/spanner/v1.ts#L492">apis/spanner/v1.ts:492</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the end is open, then the range excludes rows whose first
+							<code>len(end_open)</code> key columns exactly match <code>end_open</code>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="startclosed" class="tsd-anchor"></a>
+					<h3>start<wbr>Closed</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Closed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/spanner/v1.ts#L497">apis/spanner/v1.ts:497</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the start is closed, then the range includes all rows whose first
+							<code>len(start_closed)</code> key columns exactly match <code>start_closed</code>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="startopen" class="tsd-anchor"></a>
+					<h3>start<wbr>Open</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-api-nodejs-client/blob/8e742b96/src/apis/spanner/v1.ts#L502">apis/spanner/v1.ts:502</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the start is open, then the range excludes rows whose first
+							<code>len(start_open)</code> key columns exactly match <code>start_open</code>.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_apis_spanner_v1_.html">"apis/spanner/v1"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_apis_spanner_v1_.schema_keyrange.html" class="tsd-kind-icon">Schema$<wbr>Key<wbr>Range</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_spanner_v1_.schema_keyrange.html#endclosed" class="tsd-kind-icon">end<wbr>Closed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_spanner_v1_.schema_keyrange.html#endopen" class="tsd-kind-icon">end<wbr>Open</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_spanner_v1_.schema_keyrange.html#startclosed" class="tsd-kind-icon">start<wbr>Closed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_apis_spanner_v1_.schema_keyrange.html#startopen" class="tsd-kind-icon">start<wbr>Open</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
