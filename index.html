@@ -66,154 +66,117 @@
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://avatars0.githubusercontent.com/u/1342004?v=3&s=96" alt="Google Inc. logo" title="Google" align="right" height="96" width="96"/></p>
 				<h1 id="google-apis-node-js-client">Google APIs Node.js Client</h1>
-				<p><a href="https://circleci.com/gh/google/google-auth-library-nodejs"><img src="https://circleci.com/gh/google/google-auth-library-nodejs.svg?style=svg" alt="CircleCI"></a>
+				<p><a href="https://cloud.google.com/terms/launch-stages"><img src="https://img.shields.io/badge/Release%20Level-Alpha-ff69b4.svg" alt="Release Level"></a>
+					<a href="https://circleci.com/gh/google/google-api-nodejs-client"><img src="https://circleci.com/gh/google/google-api-nodejs-client.svg?style=svg" alt="CircleCI"></a>
 					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/google/google-api-nodejs-client.svg" alt="Greenkeeper"></a>
 					<a href="https://www.npmjs.org/package/googleapis"><img src="https://img.shields.io/npm/v/googleapis.svg" alt="npm version"></a>
 					<a href="https://codecov.io/github/google/google-api-nodejs-client?branch=master"><img src="https://codecov.io/github/google/google-api-nodejs-client/coverage.svg?branch=master" alt="Code Coverage"></a>
 					<a href="https://nodei.co/npm/googleapis/"><img src="https://img.shields.io/npm/dm/googleapis.svg" alt="Downloads"></a>
 					<a href="https://david-dm.org/google/google-api-nodejs-client"><img src="https://david-dm.org/google/google-api-nodejs-client.svg" alt="Dependency Status"></a>
-					<a href="https://david-dm.org/google/google-api-nodejs-client?type=dev"><img src="https://david-dm.org/google/google-api-nodejs-client/dev-status.svg" alt="devDependency Status"></a>
 				<a href="https://snyk.io/test/github/google/google-api-nodejs-client"><img src="https://snyk.io/test/github/google/google-api-nodejs-client/badge.svg" alt="Known Vulnerabilities"></a></p>
-				<p><a href="http://nodejs.org/">Node.js</a> client library for using Google APIs. Support for authorization and authentication with OAuth 2.0, API Keys and JWT (Service Tokens) is included.</p>
-				<h2 id="library-maintenance">Library maintenance</h2>
-				<p>This client library is supported but in maintenance mode only.  We are fixing necessary bugs and adding essential features to ensure this library continues to meet your needs for accessing Google APIs.  Non-critical issues will be closed.  Any issue may be reopened if it is causing ongoing problems.</p>
-				<h2 id="table-of-contents">Table of Contents</h2>
+				<p><a href="http://nodejs.org/">Node.js</a> client library for using Google APIs. Support for authorization and authentication with OAuth 2.0, API Keys and JWT tokens is included.</p>
 				<ul>
-					<li><a href="#alpha">Alpha</a></li>
-					<li><a href="#migrating-to-version-25x-of-this-library">Migrating to version <code>25.x</code> of this library</a></li>
-					<li><a href="#supported-apis">Supported APIs</a></li>
-					<li><a href="#questionsproblems">Questions/problems?</a></li>
-					<li><a href="#working-with-google-cloud-platform-apis">Working with Google Cloud Platform APIs?</a></li>
-					<li><a href="#installation">Installation</a></li>
-					<li><a href="#usage">Usage</a><ul>
-							<li><a href="#create-a-service-client">Create a service client</a></li>
-							<li><a href="#authorizing-and-authenticating">Authorizing and authenticating</a><ul>
-									<li><a href="#oauth2-client">OAuth2 client</a><ul>
-											<li><a href="#generating-an-authentication-url">Generating an authentication URL</a></li>
-											<li><a href="#retrieve-authorization-code">Retrieve authorization code</a></li>
-											<li><a href="#retrieve-access-token">Retrieve access token</a></li>
-											<li><a href="#setting-global-or-service-level-auth">Setting global or service-level auth</a></li>
-											<li><a href="#making-authenticated-requests">Making authenticated requests</a></li>
-											<li><a href="#manually-refreshing-access-token">Manually refreshing access token</a></li>
-										</ul>
-									</li>
-									<li><a href="#using-api-keys">Using API keys</a></li>
-									<li><a href="#using-jwt-service-tokens">Using JWT (Service Tokens)</a></li>
-									<li><a href="#choosing-the-correct-credential-type-automatically">Choosing the correct credential type automatically</a></li>
-								</ul>
-							</li>
-							<li><a href="#specifying-request-body">Specifying request body</a></li>
-							<li><a href="#media-uploads">Media uploads</a><ul>
-									<li><a href="#example-upload-a-plain-text-file-to-google-drive">Example: Upload a plain text file to Google Drive</a></li>
-									<li><a href="#example-upload-an-image-to-google-drive-from-a-readable-stream">Example: Upload an image to Google Drive from a readable stream</a></li>
-								</ul>
-							</li>
-							<li><a href="#exposing-request-object">Exposing request object</a></li>
-							<li><a href="#options">Options</a><ul>
-									<li><a href="#available-options">Available options</a></li>
-									<li><a href="#global-options">Global options</a><ul>
-											<li><a href="#example-specifying-a-default-timeout-and-auth-to-be-used-for-each-request">Example: Specifying a default <code>timeout</code> and <code>auth</code> to be used for each request</a></li>
-											<li><a href="#example-specifying-global-request-parameters">Example: Specifying global request parameters</a></li>
-										</ul>
-									</li>
-									<li><a href="#service-client-options">Service-client options</a><ul>
-											<li><a href="#example-specifying-a-default-auth-option-api-key-or-oauth2-client">Example: Specifying a default <code>auth</code> option (API key or OAuth2 client)</a></li>
-											<li><a href="#example-specifying-default-service-client-query-parameters">Example: Specifying default service client query parameters</a></li>
-										</ul>
-									</li>
-									<li><a href="#request-level-options">Request-level options</a></li>
-								</ul>
-							</li>
+					<li><a href="#google-apis">Google APIs</a></li>
+					<li><a href="#getting-started">Getting started</a><ul>
+							<li><a href="#installation">Installation</a></li>
+							<li><a href="#first-example">First example</a></li>
+							<li><a href="#samples">Samples</a></li>
+							<li><a href="#reference-api">Reference API</a></li>
 						</ul>
 					</li>
-					<li><a href="#using-a-proxy">Using a Proxy</a></li>
+					<li><a href="#authentication-and-authorization">Authentication and authorization</a><ul>
+							<li><a href="#oauth2-client">OAuth2 client</a></li>
+							<li><a href="#using-api-keys">Using API keys</a></li>
+							<li><a href="#service-to-service-authentication">Service <--> Service authentication</a></li>
+							<li><a href="#setting-global-or-service-level-auth">Setting global or service-level auth</a></li>
+						</ul>
+					</li>
+					<li><a href="#usage">Usage</a><ul>
+							<li><a href="#specifying-request-body">Specifying request body</a></li>
+							<li><a href="#media-uploads">Media uploads</a></li>
+							<li><a href="#request-options">Request Options</a></li>
+							<li><a href="#using-a-proxy">Using a Proxy</a></li>
+						</ul>
+					</li>
 					<li><a href="#license">License</a></li>
 					<li><a href="#contributing">Contributing</a></li>
+					<li><a href="#questionsproblems">Questions/problems?</a></li>
 				</ul>
-				<h3 id="alpha">Alpha</h3>
-				<p>This library is in Alpha. We will make an effort to support the library, but we reserve the right to make incompatible changes when necessary.</p>
-				<h3 id="release-notes-breaking-changes">Release Notes &amp; Breaking Changes</h3>
-				<p>You can find a detailed list of breaking changes and new features in our <a href="https://github.com/google/google-api-nodejs-client/releases">Release Notes</a>. If you&#39;ve used this library before <code>25.x</code>, see our <a href="https://github.com/google/google-api-nodejs-client/releases">Release Notes</a> to learn about migrating your code from <code>24.x.x</code> to <code>25.x.x</code>. It&#39;s pretty easy :)</p>
-				<h3 id="supported-apis">Supported APIs</h3>
+				<h2 id="google-apis">Google APIs</h2>
 				<p>The full list of supported APIs can be found <a href="https://developers.google.com/apis-explorer/">here</a>. The API endpoints are automatically generated, so if the API is not in the list, it is currently not supported by this API client library.</p>
-				<h3 id="questions-problems-">Questions/problems?</h3>
-				<ul>
-					<li>Ask your development related questions on <a href="http://stackoverflow.com/questions/tagged/google-api-nodejs-client">Ask a question on Stackoverflow</a></li>
-					<li>If you&#39;ve found an bug/issue, please <a href="https://github.com/google/google-api-nodejs-client/issues">file it on GitHub</a>.</li>
-				</ul>
+				<p>Supported APIs are listed on the <a href="https://developers.google.com/apis-explorer">Google APIs Explorer</a>.</p>
 				<h3 id="working-with-google-cloud-platform-apis-">Working with Google Cloud Platform APIs?</h3>
-				<p>If you&#39;re working with <a href="https://cloud.google.com/docs/">Google Cloud Platform</a> APIs such as Datastore, Cloud Storage or Pub/Sub, consider using the <a href="https://github.com/GoogleCloudPlatform/google-cloud-node"><code>google-cloud</code></a> package, an idiomatic Node.js client for Google Cloud Platform services.</p>
-				<p>You can find the list of Google Cloud Platform APIs supported by google-cloud in the <a href="https://cloud.google.com/nodejs/docs/reference/apis">google-cloud docs</a>.</p>
-				<h2 id="installation">Installation</h2>
-				<p>This library is distributed on <code>npm</code>. In order to add it as a dependency,
-				run the following command:</p>
-				<pre><code class="lang-sh">$ npm install googleapis --save
+				<p>If you&#39;re working with <a href="https://cloud.google.com/docs/">Google Cloud Platform</a> APIs such as Datastore, Cloud Storage or Pub/Sub, consider using the <a href="https://cloud.google.com/nodejs/docs/reference/libraries"><code>@google-cloud</code></a> client libraries: single purpose idiomatic Node.js clients for Google Cloud Platform services.</p>
+				<h2 id="getting-started">Getting started</h2>
+				<h3 id="installation">Installation</h3>
+				<p>This library is distributed on <code>npm</code>. In order to add it as a dependency, run the following command:</p>
+				<pre><code class="lang-sh">$ npm install googleapis
 </code></pre>
-				<h2 id="usage">Usage</h2>
-				<p><strong>Example</strong> Creates a URL Shortener client and retrieves the long url of the given short url:</p>
+				<h3 id="first-example">First example</h3>
+				<p>This is a very simple example. This creates a URL Shortener client and retrieves the long url of the given short url:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> urlshortener = google.urlshortener(<span class="hljs-string">'v1'</span>);
+
+<span class="hljs-comment">// Each API may support multiple version. With this sample, we're getting</span>
+<span class="hljs-comment">// v1 of the urlshortener API, and using an API key to authenticate.</span>
+<span class="hljs-keyword">const</span> urlshortener = google.urlshortener({
+  <span class="hljs-attr">version</span>: <span class="hljs-string">'v1'</span>,
+  <span class="hljs-attr">auth</span>: <span class="hljs-string">'YOUR API KEY'</span>
+});
 
 <span class="hljs-keyword">const</span> params = {
-  <span class="hljs-attr">shortUrl</span>: <span class="hljs-string">'http://goo.gl/xKbRu3'</span>,
-  <span class="hljs-attr">key</span>: <span class="hljs-string">'YOUR API KEY'</span>
+  <span class="hljs-attr">shortUrl</span>: <span class="hljs-string">'http://goo.gl/xKbRu3'</span>
 };
 
 <span class="hljs-comment">// get the long url of a shortened url</span>
-urlshortener.url.get(params, (err, response) =&gt; {
+urlshortener.url.get(params, (err, res) =&gt; {
   <span class="hljs-keyword">if</span> (err) {
     <span class="hljs-built_in">console</span>.error(err);
     <span class="hljs-keyword">throw</span> err;
   }
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Long url is'</span>, response.data.longUrl);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Long url is <span class="hljs-subst">${res.data.longUrl}</span>`</span>);
 });
 </code></pre>
-				<p>You can also use promises:</p>
+				<p>Instead of using callbacks you can also use promises!</p>
 				<pre><code class="lang-js">urlshortener.url.get(params)
-  .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Long url is'</span>, response.data.longUrl);
+  .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Long url is <span class="hljs-subst">${res.data.longUrl}</span>`</span>);
   })
-  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error);
+  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.error(error);
+  });
 </code></pre>
 				<p>Or async/await:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runSample</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> urlshortener.url.get(params);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Long url is'</span>, response.data.longUrl);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> urlshortener.url.get(params);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Long url is <span class="hljs-subst">${res.data.longUrl}</span>`</span>);
 }
 runSample().catch(<span class="hljs-built_in">console</span>.error);
 </code></pre>
-				<p><strong>Example</strong> Updates an email message&#39;s labels, using the <code>resource</code>
-				parameter to specify the request body.</p>
-				<pre><code class="lang-js">gmail.users.messages.modify({
-  <span class="hljs-attr">id</span>: <span class="hljs-built_in">Number</span>,
-  <span class="hljs-attr">resource</span>: {
-    <span class="hljs-attr">addLabelIds</span>: <span class="hljs-built_in">Array</span>,
-    <span class="hljs-attr">removeLabelIds</span>: <span class="hljs-built_in">Array</span>
-  },
-  <span class="hljs-attr">userId</span>: <span class="hljs-string">'me'</span>,
-}, (err, response) =&gt; {
-  <span class="hljs-built_in">console</span>.log(response.data);
-});
-</code></pre>
-				<h3 id="create-a-service-client">Create a service client</h3>
-				<p>To interact with the various Google APIs you need to create a service client for that particular API. These are immutable objects you use to make API calls.</p>
-				<p>Example: Creating a <code>urlshortener</code> client with version <code>v1</code> of the API.</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> urlshortener = google.urlshortener(<span class="hljs-string">'v1'</span>);
-</code></pre>
-				<p>Supported APIs are listed on the <a href="https://developers.google.com/apis-explorer">Google APIs Explorer</a>.</p>
-				<h3 id="authorizing-and-authenticating">Authorizing and authenticating</h3>
-				<h4 id="oauth2-client">OAuth2 client</h4>
-				<p>This client comes with an <a href="https://developers.google.com/identity/protocols/OAuth2">OAuth2</a> client that allows you to retrieve an access token and refreshes the token and retry the request seamlessly if you also provide an <code>expiry_date</code> and the token is expired. The basics of Google&#39;s OAuth2 implementation is explained on <a href="https://developers.google.com/identity/protocols/OpenIDConnect">Google Authorization and Authentication documentation</a>.</p>
+				<h3 id="samples">Samples</h3>
+				<p>There are a lot of <a href="samples/">samples</a> 🤗  If you&#39;re trying to figure out how to use an API ... look there first! If there&#39;s a sample you need missing, feel free to file an [issue][bug].</p>
+				<h3 id="reference-api">Reference API</h3>
+				<p>This library provides generated <a href="http://google.github.io/google-api-nodejs-client/">Reference API documentation</a>.</p>
+				<h2 id="authentication-and-authorization">Authentication and authorization</h2>
+				<p>The are three primary ways to authenticate to Google APIs. Some service support all authentication methods, other may only support one or two.</p>
+				<ul>
+					<li><p><strong>OAuth2</strong> - This allows you to make API calls on behalf of a given user.  In this model, the user visits your application, signs in with their Google account, and provides your application with authorization against a set of scopes.  <a href="#oauth2-client">Learn more</a>.</p>
+					</li>
+					<li><p><strong>Service <--> Service</strong> - In this model, your application talks directly to Google APIs using a Service Account.  It&#39;s useful when you have a backend application that will talk directly to Google APIs from the backend. <a href="#service-to-service-authentication">Learn more</a>.</p>
+					</li>
+					<li><p><strong>API Key</strong> - With an API key, you can access your service from a client or the server.  Typically less secure, this is only available on a small subset of services with limited scopes.  <a href="#using-api-keys">Learn more</a>.</p>
+					</li>
+				</ul>
+				<p>To learn more about the authentication client, see the <a href="https://github.com/google/google-auth-library-nodejs">Google Auth Library</a>.</p>
+				<h3 id="oauth2-client">OAuth2 client</h3>
+				<p>This client comes with an <a href="https://developers.google.com/identity/protocols/OAuth2">OAuth2</a> client that allows you to retrieve an access token and refreshes the token and retry the request seamlessly The basics of Google&#39;s OAuth2 implementation is explained on <a href="https://developers.google.com/identity/protocols/OpenIDConnect">Google Authorization and Authentication documentation</a>.</p>
 				<p>In the following examples, you may need a <code>CLIENT_ID</code>, <code>CLIENT_SECRET</code> and <code>REDIRECT_URL</code>. You can find these pieces of information by going to the <a href="https://console.developer.google.com">Developer Console</a>, clicking your project --&gt; APIs &amp; auth --&gt; credentials.</p>
 				<p>For more information about OAuth2 and how it works, <a href="https://developers.google.com/identity/protocols/OAuth2">see here</a>.</p>
 				<p>A complete sample application that authorizes and authenticates with the OAuth2 client is available at <a href="https://github.com/google/google-api-nodejs-client/tree/master/samples/oauth2.js"><code>samples/oauth2.js</code></a>.</p>
-				<h5 id="generating-an-authentication-url">Generating an authentication URL</h5>
+				<h4 id="generating-an-authentication-url">Generating an authentication URL</h4>
 				<p>To ask for permissions from a user to retrieve an access token, you redirect them to a consent page. To create a consent page URL:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> OAuth2 = google.auth.OAuth2;
 
-<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> OAuth2(
+<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> google.auth.OAuth2(
   YOUR_CLIENT_ID,
   YOUR_CLIENT_SECRET,
   YOUR_REDIRECT_URL
@@ -230,32 +193,65 @@ runSample().catch(<span class="hljs-built_in">console</span>.error);
   access_type: <span class="hljs-string">'offline'</span>,
 
   <span class="hljs-comment">// If you only need one scope you can pass it as a string</span>
-  scope: scopes,
-
-  <span class="hljs-comment">// Optional property that passes state parameters to redirect URI</span>
-  <span class="hljs-comment">// state: 'foo'</span>
+  scope: scopes
 });
 </code></pre>
-				<h5 id="important-note">IMPORTANT NOTE</h5>
-				<p><code>refresh_token</code> is only returned on the first authorization. More details <a href="https://github.com/google/google-api-nodejs-client/issues/750#issuecomment-304521450">here</a></p>
-				<h5 id="retrieve-authorization-code">Retrieve authorization code</h5>
+				<p><strong>IMPORTANT NOTE</strong> - The <code>refresh_token</code> is only returned on the first authorization. More details <a href="https://github.com/google/google-api-nodejs-client/issues/750#issuecomment-304521450">here</a>.</p>
+				<h4 id="retrieve-authorization-code">Retrieve authorization code</h4>
 				<p>Once a user has given permissions on the consent page, Google will redirect the page to the redirect URL you have provided with a code query parameter.</p>
 				<pre><code><span class="hljs-builtin-name">GET</span> /oauthcallback?code={authorizationCode}
-</code></pre><h5 id="retrieve-access-token">Retrieve access token</h5>
+</code></pre><h4 id="retrieve-access-token">Retrieve access token</h4>
 				<p>With the code returned, you can ask for an access token as shown below:</p>
-				<pre><code class="lang-js">oauth2Client.getToken(code, (err, tokens) =&gt; {
-  <span class="hljs-comment">// Now tokens contains an access_token and an optional refresh_token. Save them.</span>
-  <span class="hljs-keyword">if</span> (!err) {
-    oauth2Client.setCredentials(tokens);
-  }
-});
+				<pre><code class="lang-js"><span class="hljs-comment">// This will provide an object with the access_token and refresh_token.</span>
+<span class="hljs-comment">// Save these somewhere safe so they can be used at a later time.</span>
+<span class="hljs-keyword">const</span> {tokens} = <span class="hljs-keyword">await</span> oauth2Client.getToken(code)
+oauth2Client.setCredentials(tokens);
 </code></pre>
-				<h5 id="setting-global-or-service-level-auth">Setting global or service-level auth</h5>
-				<p>You can set the <code>auth</code> as a global or service-level option so you don&#39;t need to specify it every request.</p>
-				<p>Example: Setting a global <code>auth</code> option.</p>
+				<p>With the credentials set on your OAuth2 client - you&#39;re ready to go!</p>
+				<h3 id="using-api-keys">Using API keys</h3>
+				<p>You may need to send an API key with the request you are going to make. The following uses an API key to make a request to the Google+ API service to retrieve a person&#39;s profile given a userId:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> OAuth2 = google.auth.OAuth2;
-<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> OAuth2(
+<span class="hljs-keyword">const</span> plus = google.plus({
+  <span class="hljs-attr">version</span>: <span class="hljs-string">'v1'</span>,
+  <span class="hljs-attr">auth</span>: <span class="hljs-string">'YOUR_API_KEY'</span> <span class="hljs-comment">// specify your API key here</span>
+});
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> plus.people.get({ <span class="hljs-attr">userId</span>: <span class="hljs-string">'me'</span> });
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello <span class="hljs-subst">${res.data.displayName}</span>!`</span>);
+});
+
+main().catch(<span class="hljs-built_in">console</span>.error);
+</code></pre>
+				<p>To learn more about API keys, please see the <a href="https://support.google.com/cloud/answer/6158862?hl=en">documentation</a>.</p>
+				<h4 id="service-to-service-authentication">Service to Service Authentication</h4>
+				<p>Rather than manually creating an OAuth2 client, JWT client, or Compute client, the auth library can create the correct credential type for you, depending upon the environment your code is running under.</p>
+				<p>For example, a JWT auth client will be created when your code is running on your local developer machine, and a Compute client will be created when the same code is running on a configured instance of Google Compute Engine.</p>
+				<p>The code below shows how to retrieve a default credential type, depending upon the runtime environment. The createScopedRequired must be called to determine when you need to pass in the scopes manually, and when they have been set for you automatically based on the configured runtime environment.</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span> (<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-comment">// This method looks for the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIALS</span>
+  <span class="hljs-comment">// environment variables.</span>
+  <span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">await</span> google.auth.getClient({
+    <span class="hljs-comment">// Scopes can be specified either as an array or as a single, space-delimited string.</span>
+    scopes: [<span class="hljs-string">'https://www.googleapis.com/auth/compute'</span>]
+  });
+
+  <span class="hljs-comment">// obtain the current project Id</span>
+  <span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> google.auth.getDefaultProjectId();
+
+  <span class="hljs-comment">// Fetch the list of GCE zones within a project.</span>
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> compute.zones.list({ project, auth });
+  <span class="hljs-built_in">console</span>.log(res.data);
+}
+
+main().catch(<span class="hljs-built_in">console</span>.error);
+</code></pre>
+				<h3 id="setting-global-or-service-level-auth">Setting global or service-level auth</h3>
+				<p>You can set the <code>auth</code> as a global or service-level option so you don&#39;t need to specify it every request. For example, you can set <code>auth</code> as a global option:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
+
+<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> google.auth.OAuth2(
   YOUR_CLIENT_ID,
   YOUR_CLIENT_SECRET,
   YOUR_REDIRECT_URL
@@ -266,10 +262,9 @@ google.options({
   <span class="hljs-attr">auth</span>: oauth2Client
 });
 </code></pre>
-				<p>Example: Setting a service-level <code>auth</code> option.</p>
+				<p>Instead of setting the option globally, you can also set the authentication client at the service-level:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> OAuth2 = google.auth.OAuth2;
-<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> OAuth2(
+<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> google.auth.OAuth2(
   YOUR_CLIENT_ID,
   YOUR_CLIENT_SECRET,
   YOUR_REDIRECT_URL
@@ -281,126 +276,27 @@ google.options({
 });
 </code></pre>
 				<p>See the <a href="https://github.com/google/google-api-nodejs-client/tree/master#options">Options section</a> for more information.</p>
-				<h5 id="making-authenticated-requests">Making authenticated requests</h5>
-				<p>You can start using OAuth2 to authorize and authenticate your requests to Google APIs with the retrieved tokens. If you provide a <code>refresh_token</code> and <code>expiry_date</code> (milliseconds since the Unix Epoch) and the <code>access_token</code> has expired, the <code>access_token</code> will be automatically refreshed and the request is replayed (with the except of requests with a media body, as we cannot reliably restart your media stream). Set <code>expiry_date</code> to <code>true</code> to force a refresh.</p>
-				<p>The following sample retrieves Google+ profile of the authenticated user.</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> plus = google.plus(<span class="hljs-string">'v1'</span>);
-<span class="hljs-keyword">const</span> OAuth2 = google.auth.OAuth2;
-
-<span class="hljs-comment">// WARNING: Make sure your CLIENT_SECRET is stored in a safe place.</span>
-<span class="hljs-keyword">const</span> oauth2Client = <span class="hljs-keyword">new</span> OAuth2(
-  YOUR_CLIENT_ID,
-  YOUR_CLIENT_SECRET,
-  YOUR_REDIRECT_URL
-);
-
-<span class="hljs-comment">// Retrieve tokens via token exchange explained above or set them:</span>
-oauth2Client.setCredentials({
-  <span class="hljs-attr">access_token</span>: <span class="hljs-string">'ACCESS TOKEN HERE'</span>,
-  <span class="hljs-attr">refresh_token</span>: <span class="hljs-string">'REFRESH TOKEN HERE'</span>
-  <span class="hljs-comment">// Optional, provide an expiry_date (milliseconds since the Unix Epoch)</span>
-  <span class="hljs-comment">// expiry_date: (new Date()).getTime() + (1000 * 60 * 60 * 24 * 7)</span>
-});
-
-plus.people.get({
-  <span class="hljs-attr">userId</span>: <span class="hljs-string">'me'</span>,
-  <span class="hljs-attr">auth</span>: oauth2Client
-}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(response.data);
-});
-</code></pre>
-				<h5 id="manually-refreshing-access-token">Manually refreshing access token</h5>
-				<p>If you need to manually refresh the <code>access_token</code> associated with your OAuth2 client, make sure you have a <code>refresh_token</code> set in your credentials first and then call:</p>
-				<pre><code class="lang-js">oauth2Client.refreshAccessToken(<span class="hljs-function">(<span class="hljs-params">err, tokens</span>) =&gt;</span> {
-  <span class="hljs-comment">// your access_token is now refreshed and stored in oauth2Client</span>
-  <span class="hljs-comment">// store these new tokens in a safe place (e.g. database)</span>
-});
-</code></pre>
-				<h4 id="using-api-keys">Using API keys</h4>
-				<p>You may need to send an API key with the request you are going to make. The following uses an API key to make a request to the Google+ API service to retrieve a person&#39;s profile given a userId:</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> plus = google.plus(<span class="hljs-string">'v1'</span>);
-
-<span class="hljs-keyword">const</span> API_KEY = <span class="hljs-string">'ABC123'</span>; <span class="hljs-comment">// specify your API key here</span>
-
-plus.people.get({
-  <span class="hljs-attr">auth</span>: API_KEY,
-  <span class="hljs-attr">userId</span>: <span class="hljs-string">'+google'</span>
-}, (err, response) =&gt; {
-  <span class="hljs-keyword">if</span> (err) {
-    <span class="hljs-built_in">console</span>.error(err);
-    <span class="hljs-keyword">throw</span> err;
-  }
-  <span class="hljs-built_in">console</span>.log(response.data.displayName);
-});
-</code></pre>
-				<p>Alternatively, you can specify the <code>key</code> parameter and it will get used:</p>
-				<pre><code class="lang-js">plus.people.get({
-  <span class="hljs-attr">key</span>: API_KEY,
-  <span class="hljs-attr">userId</span>: <span class="hljs-string">'+google'</span>
-}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response</span>) </span>{
-  <span class="hljs-keyword">if</span> (err) {
-    <span class="hljs-built_in">console</span>.error(err);
-    <span class="hljs-keyword">throw</span> err;
-  }
-  <span class="hljs-built_in">console</span>.log(response.data.displayName);
-});
-</code></pre>
-				<p>To learn more about API keys, please see the <a href="https://support.google.com/cloud/answer/6158862?hl=en">documentation</a>.</p>
-				<h4 id="using-jwt-service-tokens-">Using JWT (Service Tokens)</h4>
-				<p>The Google Developers Console provides <code>.json</code> file that you can use to configure a JWT auth client and authenticate your requests, for example when using a service account.</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-<span class="hljs-keyword">const</span> drive = google.drive(<span class="hljs-string">'v3'</span>);
-
-<span class="hljs-keyword">const</span> key = <span class="hljs-built_in">require</span>(<span class="hljs-string">'/path/to/key.json'</span>);
-<span class="hljs-keyword">const</span> jwtClient = <span class="hljs-keyword">new</span> google.auth.JWT({
-  <span class="hljs-attr">email</span>: key.client_email,
-  <span class="hljs-attr">key</span>: key.private_key,
-  <span class="hljs-attr">scopes</span>: [<span class="hljs-string">'https://www.googleapis.com/auth/drive'</span>]
-});
-
-<span class="hljs-comment">// Make an authorized request to list Drive files.</span>
-drive.files.list({
-  <span class="hljs-attr">auth</span>: jwtClient
-}, (err, response) =&gt; {
-  <span class="hljs-comment">// handle err and response</span>
-});
-</code></pre>
-				<p>The parameters for the JWT auth client including how to use it with a <code>.pem</code> file are explained in <a href="samples/jwt.js">samples/jwt.js</a>.</p>
-				<h4 id="choosing-the-correct-credential-type-automatically">Choosing the correct credential type automatically</h4>
-				<p>Rather than manually creating an OAuth2 client, JWT client, or Compute client, the auth library can create the correct credential type for you, depending upon the environment your code is running under.</p>
-				<p>For example, a JWT auth client will be created when your code is running on your local developer machine, and a Compute client will be created when the same code is running on a configured instance of Google Compute Engine.</p>
-				<p>The code below shows how to retrieve a default credential type, depending upon the runtime environment. The createScopedRequired must be called to determine when you need to pass in the scopes manually, and when they have been set for you automatically based on the configured runtime environment.</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// This method looks for the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIALS environment variables.</span>
-  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">await</span> google.auth.getClient();
-
-  <span class="hljs-comment">// Scopes can be specified either as an array or as a single, space-delimited string.</span>
-  <span class="hljs-keyword">if</span> (client <span class="hljs-keyword">instanceof</span> google.auth.JWT) {
-    client.scopes = [<span class="hljs-string">'https://www.googleapis.com/auth/compute'</span>];
-  }
-
-  <span class="hljs-comment">// Fetch the list of GCE zones within a project.</span>
-  <span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> google.auth.getDefaultProjectId();
-  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> compute.zones.list({ project, <span class="hljs-attr">auth</span>: client });
-  <span class="hljs-built_in">console</span>.log(res.data);
-}
-
-main().catch(<span class="hljs-built_in">console</span>.error);
-</code></pre>
+				<h2 id="usage">Usage</h2>
 				<h3 id="specifying-request-body">Specifying request body</h3>
-				<p>The body of the request is specified in the <code>resource</code> parameter object of the request. The resource/body is specified as a JavaScript object with key/value pairs. See the example in the next section below for an example on how it is specified.</p>
+				<p>The body of the request is specified in the <code>resource</code> parameter object of the request. The resource/body is specified as a JavaScript object with key/value pairs. For example, this sample creates a watcher that posts notifications to a Google Cloud Pub/Sub topic when emails are sent to a gmail account:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> gmail.users.watch({
+  <span class="hljs-attr">userId</span>: <span class="hljs-string">'me'</span>,
+  <span class="hljs-attr">resource</span>: {
+    <span class="hljs-comment">// Replace with `projects/${PROJECT_ID}/topics/${TOPIC_NAME}`</span>
+    topicName: <span class="hljs-string">`projects/el-gato/topics/gmail`</span>
+  }
+});
+<span class="hljs-built_in">console</span>.log(res.data);
+</code></pre>
 				<h3 id="media-uploads">Media uploads</h3>
 				<p>This client supports multipart media uploads. The resource parameters are specified in the <code>resource</code> parameter object, and the media itself is specified in the <code>media.body</code> parameter with mime-type specified in <code>media.mimeType</code>.</p>
-				<h5 id="example-upload-a-plain-text-file-to-google-drive">Example: Upload a plain text file to Google Drive</h5>
 				<p>This example uploads a plain text file to Google Drive with the title &quot;Test&quot; and contents &quot;Hello World&quot;.</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> drive = google.drive({
   <span class="hljs-attr">version</span>: <span class="hljs-string">'v3'</span>,
   <span class="hljs-attr">auth</span>: oauth2Client
 });
 
-drive.files.create({
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> drive.files.create({
   <span class="hljs-attr">resource</span>: {
     <span class="hljs-attr">name</span>: <span class="hljs-string">'Test'</span>,
     <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'text/plain'</span>
@@ -409,71 +305,80 @@ drive.files.create({
     <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'text/plain'</span>,
     <span class="hljs-attr">body</span>: <span class="hljs-string">'Hello World'</span>
   }
-}, callback);
+});
 </code></pre>
 				<p>You can also upload media by specifying <code>media.body</code> as a <a href="http://nodejs.org/api/stream.html#stream_class_stream_readable">Readable stream</a>. This can allow you to upload very large files that cannot fit into memory.</p>
-				<p>Note: Your readable stream may be <a href="http://nodejs.org/api/stream.html#stream_stream">unstable</a>. Use at your own risk.</p>
-				<h5 id="example-upload-an-image-to-google-drive-from-a-readable-stream">Example: Upload an image to Google Drive from a readable stream</h5>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+
 <span class="hljs-keyword">const</span> drive = google.drive({
   <span class="hljs-attr">version</span>: <span class="hljs-string">'v3'</span>,
   <span class="hljs-attr">auth</span>: oauth2Client
 });
 
-drive.files.create({
-  <span class="hljs-attr">resource</span>: {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">'testimage.png'</span>,
-    <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'image/png'</span>
-  },
-  <span class="hljs-attr">media</span>: {
-    <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'image/png'</span>,
-    <span class="hljs-attr">body</span>: fs.createReadStream(<span class="hljs-string">'awesome.png'</span>) <span class="hljs-comment">// read streams are awesome!</span>
-  }
-}, callback);
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> drive.files.create({
+    <span class="hljs-attr">resource</span>: {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'testimage.png'</span>,
+      <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'image/png'</span>
+    },
+    <span class="hljs-attr">media</span>: {
+      <span class="hljs-attr">mimeType</span>: <span class="hljs-string">'image/png'</span>,
+      <span class="hljs-attr">body</span>: fs.createReadStream(<span class="hljs-string">'awesome.png'</span>)
+    }
+  });
+  <span class="hljs-built_in">console</span>.log(res.data);
+}
+
+main().catch(<span class="hljs-built_in">console</span>.error);
 </code></pre>
 				<p>For more examples of creation and modification requests with media attachments, take a look at the <code>samples/drive/upload.js</code> sample.</p>
-				<h3 id="options">Options</h3>
+				<h3 id="request-options">Request Options</h3>
 				<p>For more fine-tuned control over how your API calls are made, we provide you with the ability to specify additional options that can be applied directly to the <a href="https://github.com/axios/axios">&#39;axios&#39;</a> object used in this library to make network calls to the API.</p>
-				<p>You may specify additional options either in the global <code>google</code> object or on a service client basis.</p>
-				<h4 id="available-options">Available options</h4>
-				<p>The options you specify are attached to the <code>axios</code> object so whatever <code>axios</code> supports, this library supports. You may also specify global or per-service request parameters that will be attached to all API calls you make.</p>
+				<p>You may specify additional options either in the global <code>google</code> object or on a service client basis.  The options you specify are attached to the <code>axios</code> object so whatever <code>axios</code> supports, this library supports. You may also specify global or per-service request parameters that will be attached to all API calls you make.</p>
 				<p>A full list of supported options can be <a href="https://github.com/axios/axios#request-config">found here</a>.</p>
 				<h4 id="global-options">Global options</h4>
-				<h5 id="example-specifying-a-default-timeout-and-auth-to-be-used-for-each-request">Example: Specifying a default <code>timeout</code> and <code>auth</code> to be used for each request</h5>
-				<p>You can choose default options that will be sent with each request.  For a list
-				of available options, see the <a href="https://github.com/axios/axios#request-config">Axios Request Options</a>.</p>
+				<p>You can choose default options that will be sent with each request. These options will be used for every service instantiated by the google client. In this example, the <code>timeout</code> property of <code>AxiosRequestConfig</code> will be set for every request:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-google.options({ <span class="hljs-attr">timeout</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">auth</span>: auth });
-
-<span class="hljs-comment">// All requests made with this object will use these settings unless overridden.</span>
+google.options({
+  <span class="hljs-comment">// All requests made with this object will use these settings unless overridden.</span>
+  timeout: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">auth</span>: auth
+});
 </code></pre>
-				<h5 id="example-specifying-global-request-parameters">Example: Specifying global request parameters</h5>
+				<p>You can also modify the parameters sent with each request:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
-google.options({ <span class="hljs-attr">params</span>: { <span class="hljs-attr">quotaUser</span>: <span class="hljs-string">'user123@example.com'</span> } });
-
-<span class="hljs-comment">// All requests from all services will contain the above query parameter</span>
-<span class="hljs-comment">// unless overridden either in a service client or in individual API calls.</span>
+google.options({
+  <span class="hljs-comment">// All requests from all services will contain the above query parameter</span>
+  <span class="hljs-comment">// unless overridden either in a service client or in individual API calls.</span>
+  params: {
+    <span class="hljs-attr">quotaUser</span>: <span class="hljs-string">'user123@example.com'</span>
+  }
+});
 </code></pre>
 				<h4 id="service-client-options">Service-client options</h4>
 				<p>You can also specify options when creating a service client.</p>
-				<h5 id="example-specifying-a-default-auth-option-api-key-or-oauth2-client-">Example: Specifying a default <code>auth</code> option (API key or OAuth2 client)</h5>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> auth = <span class="hljs-string">'API KEY'</span>; <span class="hljs-comment">// or you could use oauth2Client</span>
-<span class="hljs-keyword">const</span> urlshortener = google.urlshortener({ <span class="hljs-attr">version</span>: <span class="hljs-string">'v1'</span>, <span class="hljs-attr">auth</span>: auth });
-
-<span class="hljs-comment">// All requests made with this object will use the specified auth.</span>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> urlshortener = google.urlshortener({
+  <span class="hljs-attr">version</span>: <span class="hljs-string">'v1'</span>,
+  <span class="hljs-comment">// All requests made with this object will use the specified auth.</span>
+  auth: <span class="hljs-string">'API KEY'</span>;
+});
 </code></pre>
 				<p>By doing this, every API call made with this service client will use <code>&#39;API KEY&#39;</code> to authenticate.</p>
 				<p><strong>Note:</strong> Created clients are <strong>immutable</strong> so you must create a new one if you want to specify different options.</p>
-				<h5 id="example-specifying-default-service-client-query-parameters">Example: Specifying default service client query parameters</h5>
+				<p>Similar to the examples above, you can also modify the parameters used for every call of a given service:</p>
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> urlshortener = google.urlshortener({
   <span class="hljs-attr">version</span>: <span class="hljs-string">'v1'</span>,
-  <span class="hljs-attr">params</span>: { <span class="hljs-attr">quotaUser</span>: <span class="hljs-string">'user123@example.com'</span> }
+  <span class="hljs-comment">// All requests made with this service client will contain the</span>
+  <span class="hljs-comment">// quotaUser query parameter unless overridden in individual API calls.</span>
+  params: {
+    <span class="hljs-attr">quotaUser</span>: <span class="hljs-string">'user123@example.com'</span>
+  }
 });
-<span class="hljs-comment">// All requests made with this service client will contain the</span>
-<span class="hljs-comment">// quotaUser query parameter unless overridden in individual API calls.</span>
 
 <span class="hljs-comment">// Calls with this drive client will NOT contain the quotaUser query parameter.</span>
 <span class="hljs-keyword">const</span> drive = google.drive(<span class="hljs-string">'v3'</span>);
+...
+
 </code></pre>
 				<h4 id="request-level-options">Request-level options</h4>
 				<p>You can specify an <code>auth</code> object to be used per request. Each request also inherits the options specified at the service level and global level.</p>
@@ -481,57 +386,59 @@ google.options({ <span class="hljs-attr">params</span>: { <span class="hljs-attr
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {google} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'googleapis'</span>);
 <span class="hljs-keyword">const</span> bigquery = google.bigquery(<span class="hljs-string">'v2'</span>);
 
-<span class="hljs-comment">// This method looks for the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIALS</span>
-<span class="hljs-comment">// environment variables.</span>
-google.auth.getApplicationDefault(<span class="hljs-function">(<span class="hljs-params">err, authClient, projectId</span>) =&gt;</span> {
-  <span class="hljs-keyword">if</span> (err) {
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Authentication failed because of '</span>, err);
-    <span class="hljs-keyword">throw</span> err;
-  }
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
 
-  <span class="hljs-keyword">if</span> (authClient.createScopedRequired &amp;&amp; authClient.createScopedRequired()) {
-    <span class="hljs-keyword">const</span> scopes = [<span class="hljs-string">'https://www.googleapis.com/auth/cloud-platform'</span>];
-    authClient = authClient.createScoped(scopes);
-  }
+  <span class="hljs-comment">// This method looks for the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIALS</span>
+  <span class="hljs-comment">// environment variables.</span>
+  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">await</span> google.auth.getClient({
+    <span class="hljs-attr">scopes</span>: [<span class="hljs-string">'https://www.googleapis.com/auth/cloud-platform'</span>]
+  });
+
+  <span class="hljs-keyword">const</span> projectId = <span class="hljs-keyword">await</span> google.auth.getDefaultProjectId();
 
   <span class="hljs-keyword">const</span> request = {
-    <span class="hljs-attr">projectId</span>: projectId,
+    projectId,
     <span class="hljs-attr">datasetId</span>: <span class="hljs-string">'&lt;YOUR_DATASET_ID&gt;'</span>,
 
     <span class="hljs-comment">// This is a "request-level" option</span>
-    auth: authClient
+    auth: client
   };
 
-  bigquery.datasets.delete(request, (err, response) =&gt; {
-    <span class="hljs-keyword">if</span> (err) {
-      <span class="hljs-keyword">throw</span> err;
-    }
-    <span class="hljs-built_in">console</span>.log(response.data);
-  });
-});
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> bigquery.datasets.delete(request);
+  <span class="hljs-built_in">console</span>.log(res.data);
+
+}
+
+main().catch(<span class="hljs-built_in">console</span>.error);
 </code></pre>
 				<p>You can also override <em>axios</em> options per request, such as <code>url</code>, <code>method</code>, and <code>encoding</code>.</p>
 				<p>For example:</p>
-				<pre><code class="lang-js">drive.files.export({
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> drive.files.export({
   <span class="hljs-attr">fileId</span>: <span class="hljs-string">'asxKJod9s79'</span>, <span class="hljs-comment">// A Google Doc</span>
   mimeType: <span class="hljs-string">'application/pdf'</span>
 }, {
-  <span class="hljs-attr">encoding</span>: <span class="hljs-literal">null</span> <span class="hljs-comment">// Make sure we get the binary data</span>
-}, (err, response) =&gt; {
-  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// Make sure we get the binary data</span>
+  encoding: <span class="hljs-literal">null</span>
 });
 </code></pre>
-				<h2 id="using-a-proxy">Using a Proxy</h2>
+				<h3 id="using-a-proxy">Using a Proxy</h3>
 				<p>You can use the following environment variables to proxy HTTP and HTTPS requests:</p>
 				<ul>
 					<li><code>HTTP_PROXY</code> / <code>http_proxy</code></li>
 					<li><code>HTTPS_PROXY</code> / <code>https_proxy</code></li>
 				</ul>
 				<p>When HTTP_PROXY / http_proxy are set, they will be used to proxy non-SSL requests that do not have an explicit proxy configuration option present. Similarly, HTTPS_PROXY / https_proxy will be respected for SSL requests that do not have an explicit proxy configuration option. It is valid to define a proxy in one of the environment variables, but then override it for a specific request, using the proxy configuration option.</p>
+				<h2 id="release-notes-breaking-changes">Release Notes &amp; Breaking Changes</h2>
+				<p>You can find a detailed list of breaking changes and new features in our <a href="https://github.com/google/google-api-nodejs-client/releases">Release Notes</a>. If you&#39;ve used this library before <code>25.x</code>, see our <a href="https://github.com/google/google-api-nodejs-client/releases">Release Notes</a> to learn about migrating your code from <code>24.x.x</code> to <code>25.x.x</code>. It&#39;s pretty easy :)</p>
 				<h2 id="license">License</h2>
 				<p>This library is licensed under Apache 2.0. Full license text is available in <a href="https://github.com/google/google-api-nodejs-client/tree/master/COPYING">COPYING</a>.</p>
 				<h2 id="contributing">Contributing</h2>
-				<p>See <a href="https://github.com/google/google-api-nodejs-client/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
+				<p>We love contributions! Before submitting a Pull Request, it&#39;s always good to start with a new issue first. To learn more, see <a href="https://github.com/google/google-api-nodejs-client/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
+				<h2 id="questions-problems-">Questions/problems?</h2>
+				<ul>
+					<li>Ask your development related questions on <a href="http://stackoverflow.com/questions/tagged/google-api-nodejs-client">Ask a question on Stackoverflow</a></li>
+					<li>If you&#39;ve found an bug/issue, please <a href="https://github.com/google/google-api-nodejs-client/issues">file it on GitHub</a>.</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
